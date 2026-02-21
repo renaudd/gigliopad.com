@@ -35,24 +35,22 @@
             top: 25px;
             right: 25px;
             z-index: 2000;
-            font-family: 'Outfit', sans-serif;
         }
 
         .translate-btn {
             background: rgba(252, 251, 247, 0.9);
             border: 1px solid rgba(0, 0, 0, 0.1);
             color: var(--text-dark);
-            padding: 10px 20px;
-            border-radius: 30px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            padding: 0;
         }
 
         .lang-menu {
@@ -138,12 +136,11 @@
 
 <body>
     <div class="custom-translate">
-        <button class="translate-btn" onclick="toggleLangMenu()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <button class="translate-btn" onclick="toggleLangMenu()" title="Translate">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path
                     d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3a18.2 18.2 0 0 1 3 9 18.2 18.2 0 0 1-3 9M12 3a18.2 18.2 0 0 0-3 9 18.2 18.2 0 0 0 3 9" />
             </svg>
-            <span id="current-lang">Translate</span>
         </button>
         <div class="lang-menu" id="langMenu">
             <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
@@ -186,6 +183,14 @@
                 It’s dark, moody, and exactly the kind of place Ramón Gaya would have liked.</p>
         </div>
 
+        <div class="spot">
+            <span class="spot-type">The "Plan B" List</span>
+            <div class="spot-name">Insider Fallbacks</div>
+            <p>If Emma or Barnum are packed, try <strong>Piccolo Buco</strong> for famous thick-crust pizza (near Trevi), or
+                <strong>Da Enzo al 29</strong> in Trastevere for no-reservations authentic carbonara (go at 6:45 PM). For art
+                without the crowds, <strong>Doria Pamphilj</strong> is a stunning palace detour.</p>
+        </div>
+
         <a href="index.html" class="back-link">Back to the Pad</a>
     </div>
 
@@ -199,7 +204,6 @@
             if (select) {
                 select.value = code;
                 select.dispatchEvent(new Event('change'));
-                document.getElementById('current-lang').innerText = name;
                 document.getElementById('langMenu').classList.remove('active');
             }
         }
