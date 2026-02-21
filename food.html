@@ -27,39 +27,62 @@
             line-height: 1.7;
         }
 
-        /* Translation Widget */
-        .lang-switch {
+        .goog-te-banner-frame, .goog-te-gadget { display: none !important; }
+        body { top: 0 !important; }
+
+        .custom-translate {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(252, 251, 247, 0.8);
-            backdrop-filter: blur(10px);
+            top: 25px;
+            right: 25px;
+            z-index: 2000;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .translate-btn {
+            background: rgba(252, 251, 247, 0.9);
             border: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-
-        #google_translate_element {
-            display: inline-block;
-        }
-
-        .goog-te-gadget {
-            font-family: 'Outfit', sans-serif !important;
-            font-size: 0.65rem !important;
-            color: var(--text-dark) !important;
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .goog-te-gadget-simple {
-            background-color: transparent !important;
-            border: none !important;
-            padding: 0 !important;
+        .lang-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: rgba(252, 251, 247, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 10px 0;
+            display: none;
+            min-width: 160px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(20px);
         }
 
-        .goog-te-menu-value span {
-            color: var(--text-dark) !important;
-            font-weight: 500 !important;
+        .lang-menu.active { display: block; }
+
+        .lang-option {
+            padding: 10px 25px;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+        }
+
+        .lang-option:hover {
+            background: rgba(209, 90, 42, 0.1);
+            color: var(--accent-orange);
         }
 
         .container {
@@ -114,30 +137,51 @@
 </head>
 
 <body>
-    <div class="lang-switch">
-        <div id="google_translate_element"></div>
+    <div class="custom-translate">
+        <button class="translate-btn" onclick="toggleLangMenu()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                    d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3a18.2 18.2 0 0 1 3 9 18.2 18.2 0 0 1-3 9M12 3a18.2 18.2 0 0 0-3 9 18.2 18.2 0 0 0 3 9" />
+            </svg>
+            <span id="current-lang">Translate</span>
+        </button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
+            <div class="lang-option" onclick="changeLang('it', 'Italiano')">Italiano</div>
+            <div class="lang-option" onclick="changeLang('es', 'Español')">Español</div>
+            <div class="lang-option" onclick="changeLang('fr', 'Français')">Français</div>
+            <div class="lang-option" onclick="changeLang('de', 'Deutsch')">Deutsch</div>
+            <div class="lang-option" onclick="changeLang('zh-CN', '中文')">中文</div>
+            <div class="lang-option" onclick="changeLang('ja', '日本語')">日本語</div>
+        </div>
     </div>
+    <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
         <h1>Insider Eats</h1>
 
         <div class="spot">
             <span class="spot-type">Pizza & Vibes</span>
-            <div class="spot-name">Emma</div>
+            <div class="spot-name"><a href="https://maps.google.com/?q=Emma+Pizzeria+Via+del+Monte+della+Farina+28+Rome"
+                    target="_blank">Emma</a></div>
             <p>Think thin-crust Roman pizza with high-end ingredients. It’s busy, it’s loud, and it’s arguably the best
                 spot in the center for a late dinner with friends. Just a 5-minute walk from the pad.</p>
         </div>
 
         <div class="spot">
             <span class="spot-type">The Caffeine Hub</span>
-            <div class="spot-name">Barnum Roma</div>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/Barnum+Roma+Via+del+Pellegrino,+87,+00186+Rome,+Italy"
+                    target="_blank">Barnum Roma</a></div>
             <p>Our go-to for morning coffee or a productive brunch. It’s got that creative shop energy and the best
                 avocado toast in Regola. Perfect for meeting other travelers or getting some work done.</p>
         </div>
 
         <div class="spot">
             <span class="spot-type">Cocktail Culture</span>
-            <div class="spot-name">The Jerry Thomas Project</div>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome,+Vicolo+Cellini+30,+00186+Rome"
+                    target="_blank">The Jerry Thomas Project</a></div>
             <p>Rome’s most famous speakeasy. You’ll need a password (and a reservation), but the drinks are world-class.
                 It’s dark, moody, and exactly the kind of place Ramón Gaya would have liked.</p>
         </div>
@@ -145,6 +189,27 @@
         <a href="index.html" class="back-link">Back to the Pad</a>
     </div>
 
+    <script>
+        function toggleLangMenu() {
+            document.getElementById('langMenu').classList.toggle('active');
+        }
+
+        function changeLang(code, name) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = code;
+                select.dispatchEvent(new Event('change'));
+                document.getElementById('current-lang').innerText = name;
+                document.getElementById('langMenu').classList.remove('active');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-translate')) {
+                document.getElementById('langMenu').classList.remove('active');
+            }
+        });
+    </script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({

@@ -10,6 +10,65 @@
     <link rel="icon" type="image/png" href="flower-logo.png">
     <style>
         :root { --bg-color: #fcfbf7; --accent-orange: #d15a2a; --text-dark: #1a1a1a; --text-muted: #555555; }
+        
+        .goog-te-banner-frame, .goog-te-gadget { display: none !important; }
+        body { top: 0 !important; }
+
+        .custom-translate {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 2000;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .translate-btn {
+            background: rgba(252, 251, 247, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: rgba(252, 251, 247, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 10px 0;
+            display: none;
+            min-width: 160px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .lang-menu.active { display: block; }
+
+        .lang-option {
+            padding: 10px 25px;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.8rem;
+        }
+
+        .lang-option:hover {
+            background: rgba(209, 90, 42, 0.1);
+            color: var(--accent-orange);
+        }
+
         body { margin:0; background: var(--bg-color); font-family: 'Outfit', sans-serif; color: var(--text-dark); line-height: 1.7; }
         .container { max-width: 800px; margin: 0 auto; padding: 100px 40px; }
         h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; }
@@ -20,25 +79,75 @@
     </style>
 </head>
 <body>
+    <div class="custom-translate">
+        <button class="translate-btn" onclick="toggleLangMenu()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                    d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3a18.2 18.2 0 0 1 3 9 18.2 18.2 0 0 1-3 9M12 3a18.2 18.2 0 0 0-3 9 18.2 18.2 0 0 0 3 9" />
+            </svg>
+            <span id="current-lang">Translate</span>
+        </button>
+        <div class="lang-menu" id="langMenu">
+            <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
+            <div class="lang-option" onclick="changeLang('it', 'Italiano')">Italiano</div>
+            <div class="lang-option" onclick="changeLang('es', 'Español')">Español</div>
+            <div class="lang-option" onclick="changeLang('fr', 'Français')">Français</div>
+            <div class="lang-option" onclick="changeLang('de', 'Deutsch')">Deutsch</div>
+            <div class="lang-option" onclick="changeLang('zh-CN', '中文')">中文</div>
+            <div class="lang-option" onclick="changeLang('ja', '日本語')">日本語</div>
+        </div>
+    </div>
+    <div id="google_translate_element" style="display:none"></div>
+
     <div class="container">
         <h1>Getting Around</h1>
 
         <div class="item">
-            <div class="item-h">The Regola Hub</div>
-            <p>Walking is the only way to truly see Rome. From Gigliopad, you can hit the Pantheon in 10 minutes, the Jewish Ghetto in 5, and the best gelato in the world in about 3. Forget the bus.</p>
-        </div>
-
-        <div class="item">
-            <div class="item-h">Crossing Bridges</div>
-            <p>Walk across Ponte Sisto and you’re in the heart of Trastevere. It’s the perfect loop for a morning coffee or a sunset beer by the river. It’s where Rome actually happens.</p>
-        </div>
-
-        <div class="item">
             <div class="item-h">Arrivals</div>
-            <p>Grab a fixed-rate taxi from FCO (€50) or take the Leonardo Express to Termini and then a 15-minute taxi to Vicolo del Giglio. Pro tip: Don't bring a huge suitcase; the streets are historic (meaning: bumpy).</p>
+            <p>Grab a fixed-rate taxi from FCO (€55) or take the Leonardo Express to Termini and then a taxi. Uber Black is your
+                best bet for central city moves. Taxis are always waiting at Largo di Torre Argentina.</p>
+        </div>
+
+        <div class="item">
+            <div class="item-h">The 40 Express</div>
+            <p>Need to hit Termini? Take Bus 40 Express from Corso Vittorio. It’s fast, cheap (€1.50), and way better than the
+                Metro. Just tap your card on the bus.</p>
         </div>
 
         <a href="index.html" class="back-link">Back to the Pad</a>
     </div>
+    <script>
+        function toggleLangMenu() {
+            document.getElementById('langMenu').classList.toggle('active');
+        }
+
+        function changeLang(code, name) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = code;
+                select.dispatchEvent(new Event('change'));
+                document.getElementById('current-lang').innerText = name;
+                document.getElementById('langMenu').classList.remove('active');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-translate')) {
+                document.getElementById('langMenu').classList.remove('active');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,it,es,fr,de,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
