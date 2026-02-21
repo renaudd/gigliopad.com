@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Trip | Gigliopad Rome</title>
+    <title>Comprehensive Transport | Gigliopad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -110,20 +110,44 @@
             margin-bottom: 50px;
         }
 
-        .tip {
-            margin-bottom: 50px;
+        section {
+            margin-bottom: 60px;
         }
 
-        .tip-h {
-            font-size: 1.4rem;
-            font-weight: 500;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
             color: var(--accent-orange);
-            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1rem;
+        .transport-option {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.02);
+            border-radius: 10px;
+        }
+
+        .option-h {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .route {
+            font-size: 0.9rem;
             color: var(--text-muted);
+            margin-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 10px;
         }
 
         .back-link {
@@ -167,35 +191,62 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <h1>Planning</h1>
+        <h1>Mastering Roman Transit</h1>
+        <p>Regola is perfectly positioned. Here is how to navigate to and from our hub with zero stress.</p>
 
-        <div class="tip">
-            <div class="tip-h">The Artsy Day (Day 1)</div>
-            <p>Kick things off with the "Welcome to Rome" 3D cinema to see the city's evolution. Outside lunch at Pierluigi is
-                non-negotiable. Cap the night at Seu Pizza Illuminati—book this 3 weeks in advance.</p>
-        </div>
+        <section id="fiumicino">
+            <h2>Aeroporto Fiumicino (FCO)</h2>
+            
+            <div class="transport-option">
+                <div class="option-h"><span>Taxi (Top Choice)</span> <span class="price">€55</span></div>
+                <p>Door-to-terminal service. Crucial for early flights or those with heavy luggage. Confirm "Tariffa fissa" before departure.</p>
+            </div>
 
-        <div class="tip">
-            <div class="tip-h">Local Vibe (Day 2)</div>
-            <p>Beat the heat at the Colosseum at 8:30 AM. Grab lunch standing at the counter at Roscioli for the best Carbonara in
-                the game, then hike the Janiculum Hill at sunset for the ultimate skyline view.</p>
-        </div>
+            <div class="transport-option">
+                <div class="option-h"><span>The "Smart" Commuter</span> <span class="price">€9.50</span></div>
+                <p>Avoids the chaos of Termini. FL1 regional train is cheaper than the Express and circles the city.</p>
+                <div class="route">Arenula/Cairoli → Tram 8 → Stazione Trastevere → FL1 Train → FCO</div>
+            </div>
 
-        <div class="tip">
-            <div class="tip-h">The "Plan B" List</div>
-            <p>If the main spots are booked, don't sweat it. Try <strong>Emma</strong> for posh pizza in Parione, <strong>Da
-                    Enzo</strong> in Trastevere for authentic carbonara (line up at 6:45 PM), or <strong>Seu Pizza
-                    Illuminati</strong> for the modern Roman pie (book 3 weeks out).</p>
-        </div>
+            <div class="transport-option">
+                <div class="option-h"><span>Leonardo Express</span> <span class="price">€15.50</span></div>
+                <p>Fast non-stop train from Termini. Good if you are already near the station, but requires a bus transfer with luggage from Regola.</p>
+                <div class="route">Bus 40 Express → Termini → Platform 24 (Leonardo Express) → FCO</div>
+            </div>
+        </section>
 
-        <div class="tip" style="margin-top: 80px; padding: 30px; border: 1px solid var(--accent-orange); border-radius: 15px;">
-            <div class="tip-h">The Deep Guide</div>
-            <p>For those who want to master the city, explore our exhaustive resources:</p>
-            <p>→ <strong><a href="itineraries.html">Detailed Itineraries</a></strong> (1, 2, 3, & 5-Day Plans)</p>
-            <p>→ <strong><a href="booking.html">Master Booking Checklist</a></strong> (Venues & Flights)</p>
-        </div>
+        <section id="termini">
+            <h2>To/From Termini Station</h2>
+            
+            <div class="transport-option">
+                <div class="option-h"><span>Line 40 Express (Best)</span> <span class="price">€1.50</span></div>
+                <p>Skips most stops. Faster and safer than the 64. Just tap your card on the yellow reader.</p>
+                <div class="route">Corso Vittorio Emanuele II (walking distance) → Termini Station</div>
+            </div>
 
-        <a href="index.html" class="back-link">Back to the Pad</a>
+            <div class="transport-option">
+                <div class="option-h"><span>Private Taxi</span> <span class="price">~€15-20</span></div>
+                <p>Fastest and easiest with luggage. Use the taxi stand at Largo di Torre Argentina.</p>
+            </div>
+        </section>
+
+        <section id="around">
+            <h2>Getting Around Rome</h2>
+            <div class="transport-option">
+                <div class="option-h"><span>Taxis</span></div>
+                <p>The **FreeNow** app works well, but walking to the **Largo di Torre Argentina taxi stand** is often faster.</p>
+            </div>
+            <div class="transport-option">
+                <div class="option-h"><span>Public Transit</span></div>
+                <p>Buses are frequent but traffic-dependent. **Tram 8** is the lifeline of our area for reaching Trastevere and the FL1 train.</p>
+            </div>
+            <div class="transport-option">
+                <div class="option-h"><span>Private Mobility</span></div>
+                <p>Tours and private cars can be arranged, but we recommend avoiding car rentals in the historic center due to ZTL (Restricted Traffic Zone) fines.</p>
+            </div>
+        </section>
+
+        <a href="transport.html" class="back-link">Back to Getting Around</a>
     </div>
 
     <script>

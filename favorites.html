@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Trip | Gigliopad Rome</title>
+    <title>Our Favorites | Gigliopad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -99,7 +99,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 100px 40px;
         }
@@ -107,23 +107,70 @@
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
             margin-bottom: 50px;
         }
 
-        .tip {
-            margin-bottom: 50px;
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+            font-size: 0.8rem;
         }
 
-        .tip-h {
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .symbol {
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .venue-card {
+            margin-bottom: 20px;
+        }
+
+        .venue-name {
             font-size: 1.4rem;
             font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .venue-meta {
+            font-size: 0.8rem;
             color: var(--accent-orange);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .back-link {
@@ -167,35 +214,80 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <h1>Planning</h1>
+        <h1>The Giglio Shortlist</h1>
+        <p class="subtitle">The spots we actually go to, marked for ease of choice.</p>
 
-        <div class="tip">
-            <div class="tip-h">The Artsy Day (Day 1)</div>
-            <p>Kick things off with the "Welcome to Rome" 3D cinema to see the city's evolution. Outside lunch at Pierluigi is
-                non-negotiable. Cap the night at Seu Pizza Illuminati—book this 3 weeks in advance.</p>
+        <div class="legend">
+            <div class="legend-item"><span class="symbol">€/€€/€€€</span> Price</div>
+            <div class="legend-item"><span class="symbol">[R]</span> Res Available</div>
+            <div class="legend-item"><span class="symbol">[RN]</span> Res Needed</div>
+            <div class="legend-item"><span class="symbol">[N]</span> Contemporary</div>
+            <div class="legend-item"><span class="symbol">[H]</span> Historic</div>
         </div>
 
-        <div class="tip">
-            <div class="tip-h">Local Vibe (Day 2)</div>
-            <p>Beat the heat at the Colosseum at 8:30 AM. Grab lunch standing at the counter at Roscioli for the best Carbonara in
-                the game, then hike the Janiculum Hill at sunset for the ultimate skyline view.</p>
+        <div class="venue-grid">
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Seu+Pizza+Illuminati+Rome" target="_blank">Seu Pizza Illuminati</a></div>
+                <div class="venue-meta">€€ [RN] [N] [Pizza]</div>
+                <p>Arguably the best modern pizza in Rome. Puffy, airy, and gourmet. Book 3 weeks out.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Armando+al+Pantheon+Rome" target="_blank">Armando al Pantheon</a></div>
+                <div class="venue-meta">€€ [RN] [H] [Traditional]</div>
+                <p>Small, family-run, and literally 20 feet from the Pantheon. Gold standard Gricia. Book 1-2 months ahead.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Roscioli+Salumeria+Rome" target="_blank">Roscioli Salumeria</a></div>
+                <div class="venue-meta">€€€ [RN] [H] [Deli/Pasta]</div>
+                <p>The legendary deli. If you can't get a table, stand at the counter for wine and burrata.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Felice+a+Testaccio+Rome" target="_blank">Felice a Testaccio</a></div>
+                <div class="venue-meta">€€ [RN] [H] [Traditional]</div>
+                <p>The gold standard for Cacio e Pepe. They toss it tableside. Book 2-3 weeks out.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Emma+Pizzeria+Rome" target="_blank">Emma Pizzeria</a></div>
+                <div class="venue-meta">€€ [R] [N] [Pizza/Bistro]</div>
+                <p>High-end thin Roman pizza with top-tier ingredients. Great fallback for the center.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Il+Vinaietto+Rome" target="_blank">Il Vinaietto</a></div>
+                <div class="venue-meta">€ [H] [Wine Bar]</div>
+                <p>Unpretentious local favorite. Stand outside and lean against the wall with a €4 glass.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Ruma+Bottega+Cucina+Agricola+Rome" target="_blank">Ruma Bottega</a></div>
+                <div class="venue-meta">€€ [N] [Cheese/Agricola]</div>
+                <p>Buffalo milk specialists from the Maremma. Perfect for a lunch board near the flat.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=I+Suppli+dei+Coronari+Rome" target="_blank">I Supplì dei Coronari</a></div>
+                <div class="venue-meta">€ [Street Food]</div>
+                <p>Essential pit-stop for fried rice balls. Best when eaten walking down Via dei Coronari.</p>
+            </div>
+            
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=Pierluigi+Restaurant+Rome" target="_blank">Pierluigi</a></div>
+                <div class="venue-meta">€€€ [R] [H] [Seafood]</div>
+                <p>Posh seafood in Piazza de' Ricci. Excellent for people watching at golden hour.</p>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome" target="_blank">The Jerry Thomas Project</a></div>
+                <div class="venue-meta">€€ [RN] [N] [Speakeasy]</div>
+                <p>Rome’s most famous speakeasy. Requires a password and a reservation. World-class cocktails.</p>
+            </div>
         </div>
 
-        <div class="tip">
-            <div class="tip-h">The "Plan B" List</div>
-            <p>If the main spots are booked, don't sweat it. Try <strong>Emma</strong> for posh pizza in Parione, <strong>Da
-                    Enzo</strong> in Trastevere for authentic carbonara (line up at 6:45 PM), or <strong>Seu Pizza
-                    Illuminati</strong> for the modern Roman pie (book 3 weeks out).</p>
-        </div>
-
-        <div class="tip" style="margin-top: 80px; padding: 30px; border: 1px solid var(--accent-orange); border-radius: 15px;">
-            <div class="tip-h">The Deep Guide</div>
-            <p>For those who want to master the city, explore our exhaustive resources:</p>
-            <p>→ <strong><a href="itineraries.html">Detailed Itineraries</a></strong> (1, 2, 3, & 5-Day Plans)</p>
-            <p>→ <strong><a href="booking.html">Master Booking Checklist</a></strong> (Venues & Flights)</p>
-        </div>
-
-        <a href="index.html" class="back-link">Back to the Pad</a>
+        <a href="food.html" class="back-link">Back to Eats</a>
     </div>
 
     <script>

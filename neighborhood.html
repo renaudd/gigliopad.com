@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Around | Gigliopad Rome</title>
+    <title>Neighborhood Guide | Gigliopad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/png" href="flower-logo.png">
     <style>
-        :root { --bg-color: #fcfbf7; --accent-orange: #d15a2a; --text-dark: #1a1a1a; --text-muted: #555555; }
-        
+        :root {
+            --bg-color: #fcfbf7;
+            --accent-orange: #d15a2a;
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('whitelogo.png'), url('whitelogo.png');
+            background-position: 0 0, 100px 100px;
+            background-size: 200px 200px;
+            opacity: 0.015;
+            pointer-events: none;
+            z-index: -1;
+        }
+
         .goog-te-banner-frame, .goog-te-gadget { display: none !important; }
         body { top: 0 !important; }
 
@@ -67,28 +98,54 @@
             color: var(--accent-orange);
         }
 
-        body { margin:0; background: var(--bg-color); font-family: 'Outfit', sans-serif; color: var(--text-dark); line-height: 1.7; }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('whitelogo.png'), url('whitelogo.png');
-            background-position: 0 0, 100px 100px;
-            background-size: 200px 200px;
-            opacity: 0.015;
-            pointer-events: none;
-            z-index: -1;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 40px;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 100px 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; }
-        .item { margin-bottom: 50px; }
-        .item-h { font-size: 1.4rem; font-weight: 500; color: var(--accent-orange); margin-bottom: 10px; }
-        p { font-size: 1rem; color: var(--text-muted); }
-        .back-link { display: block; margin-top: 80px; text-align: center; color: var(--text-dark); text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; font-weight: 500; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .practical-item {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .practical-h {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background: rgba(0,0,0,0.03);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
 
         .container a {
             color: inherit;
@@ -97,6 +154,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="custom-translate">
         <button class="translate-btn" onclick="toggleLangMenu()" title="Translate">
@@ -118,30 +176,47 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <h1>Getting Around</h1>
+        <h1>Neighborhood Practicalities</h1>
+        <p>Living in Regola is a privilege. Here are the essentials to make the streets your own.</p>
 
-        <div class="item">
-            <div class="item-h">Arrivals (No Stress)</div>
-            <p>Only take official <strong>White Taxis</strong> from FCO. The fare is fixed at €55—confirm this with the driver by
-                asking "Tariffa fissa?" before you leave. Skip the Leonardo Express if you’re tired; instead, take the FL1 regional
-                train to <strong>Stazione Trastevere</strong> (€8) and then hop on Tram 8 to Arenula/Cairoli. It brings you right to
-                the neighborhood edge without the Termini madness.</p>
+        <div class="practical-item">
+            <div class="practical-h">Baggage Storage</div>
+            <p>Arriving early or leaving late? There is a <strong><a href="https://www.google.com/maps/search/?api=1&query=Luggage+Storage+Rome+Regola" target="_blank">Luggage Storage</a></strong> directly across the street on Vicolo del Giglio.</p>
         </div>
 
-        <div class="item">
-            <div class="item-h">The 40 Express</div>
-            <p>Need to hit Termini? Take Bus 40 Express from Corso Vittorio. It’s fast, cheap (€1.50), and way better than the
-                Metro. Just tap your card on the bus.</p>
+        <div class="practical-item">
+            <div class="practical-h">Laundry Service</div>
+            <p>Need a refresh? A self-service laundry and professional "Lavanderia" are available just a block away at <strong><a href="https://www.google.com/maps/search/?api=1&query=Laundry+Rome+Regola" target="_blank">Via di Monserrato</a></strong>.</p>
         </div>
 
-        <div class="item" style="margin-top: 80px; padding: 30px; border: 1px solid var(--accent-orange); border-radius: 15px;">
-            <div class="item-h">The Deep Guide</div>
-            <p>For granular maps and every way to reach the pad (including the "Smart Commuter" route):</p>
-            <p>→ <strong><a href="transport_details.html">Comprehensive Transport Guide</a></strong></p>
+        <div class="practical-item">
+            <div class="practical-h">Hydration & Health</div>
+            <p>Water fountains (Nasoni) are everywhere and the water is delicious. Grab a fresh squeezed juice at the <strong><a href="https://www.google.com/maps/search/?api=1&query=Campo+de'+Fiori+Market+Rome" target="_blank">Campo de' Fiori</a></strong> market in the morning.</p>
+        </div>
+
+        <div class="practical-item">
+            <div class="practical-h">Mobility</div>
+            <p><strong><a href="https://www.google.com/maps/search/?api=1&query=Bike+Rental+Rome+Regola" target="_blank">Bike rentals</a></strong> are available near Largo Argentina. We recommend e-bikes for the cobblestones.</p>
+        </div>
+
+        <div class="practical-item">
+            <div class="practical-h">Supermarkets</div>
+            <p>The closest spots for provisions:</p>
+            <ul>
+                <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Conad+City+Rome+Regola" target="_blank">Conad City</a></strong> (Via d'Aracoeli)</li>
+                <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Carrefour+Express+Rome+Corso+Vittorio" target="_blank">Carrefour Express</a></strong> (Corso Vittorio Emanuele II)</li>
+                <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Despar+Rome+Piazza+del+Monte+di+Pieta" target="_blank">Despar</a></strong> (Piazza del Monte di Pietà)</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>A Note on Peace</h3>
+            <p>What makes our location extra magical is that despite being in the dead-center of Rome, it is quiet and peaceful. We ask our guests to preserve this sanctuary by keeping noise levels low in the courtyard and common areas.</p>
         </div>
 
         <a href="index.html" class="back-link">Back to the Pad</a>
     </div>
+
     <script>
         function toggleLangMenu() {
             document.getElementById('langMenu').classList.toggle('active');
@@ -178,4 +253,5 @@
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>

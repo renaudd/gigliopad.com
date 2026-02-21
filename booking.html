@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Trip | Gigliopad Rome</title>
+    <title>Master Booking Guide | Gigliopad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -110,20 +110,34 @@
             margin-bottom: 50px;
         }
 
-        .tip {
-            margin-bottom: 50px;
+        .checklist-section {
+            margin-bottom: 60px;
         }
 
-        .tip-h {
-            font-size: 1.4rem;
-            font-weight: 500;
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             color: var(--accent-orange);
-            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1rem;
-            color: var(--text-muted);
+        .timeline-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .time {
+            font-weight: bold;
+            min-width: 120px;
+            color: var(--accent-orange);
+        }
+
+        .content-box {
+            background: rgba(0,0,0,0.03);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
         }
 
         .back-link {
@@ -167,35 +181,49 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <h1>Planning</h1>
+        <h1>Master Booking Checklist</h1>
+        <p>Rome rewards the prepared. Here is the temporal map for your reservations.</p>
 
-        <div class="tip">
-            <div class="tip-h">The Artsy Day (Day 1)</div>
-            <p>Kick things off with the "Welcome to Rome" 3D cinema to see the city's evolution. Outside lunch at Pierluigi is
-                non-negotiable. Cap the night at Seu Pizza Illuminati—book this 3 weeks in advance.</p>
+        <div class="checklist-section">
+            <h2>Advance Bookings</h2>
+            
+            <div class="timeline-item">
+                <div class="time">2 Months Out</div>
+                <div class="desc">
+                    <strong><a href="https://galleriaborghese.beniculturali.it/en/" target="_blank">Galleria Borghese</a></strong>: Strictly mandatory. Tickets disappear instantly.
+                    <br><strong><a href="https://www.armandopalpantheon.it/" target="_blank">Armando al Pantheon</a></strong>: Tiny and historic. Book as soon as you have your dates.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">3 Weeks Out</div>
+                <div class="desc">
+                    <strong><a href="https://www.seu-pizza.com/" target="_blank">Seu Pizza Illuminati</a></strong>: The best modern dough in the city.
+                    <br><strong><a href="https://feliceatestaccio.com/it/roma/" target="_blank">Felice a Testaccio</a></strong>: A Cacio e Pepe institution.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">2 Weeks Out</div>
+                <div class="desc">
+                    <strong><a href="https://www.museivaticani.va/" target="_blank">Vatican Museums</a></strong>: Aim for the 8:00 AM slot.
+                    <br><strong><a href="https://www.coopculture.it/en/products/the-colosseum-the-roman-forum-and-the-palatine-hill-full-experience-ticket-with-access-to-the-arena-of-the-colosseum/" target="_blank">The Colosseum</a></strong>: Look for the "Full Experience" tickets.
+                </div>
+            </div>
         </div>
 
-        <div class="tip">
-            <div class="tip-h">Local Vibe (Day 2)</div>
-            <p>Beat the heat at the Colosseum at 8:30 AM. Grab lunch standing at the counter at Roscioli for the best Carbonara in
-                the game, then hike the Janiculum Hill at sunset for the ultimate skyline view.</p>
+        <div class="content-box">
+            <h2>Flight & Rail Mastery</h2>
+            <p><strong>Google Flights:</strong> Use the "Track Prices" feature for FCO. Tuesday and Wednesday flights are typically 20% cheaper than weekends.</p>
+            <p><strong>Eurail Pass:</strong> If you are planning 3+ train trips across Italy (e.g., Florence, Venice, Naples), a <strong><a href="https://www.eurail.com" target="_blank">Eurail</a></strong> pass is worth the flexibility. If just staying in Rome, skip it and use regional/Frecciarossa tickets.</p>
         </div>
 
-        <div class="tip">
-            <div class="tip-h">The "Plan B" List</div>
-            <p>If the main spots are booked, don't sweat it. Try <strong>Emma</strong> for posh pizza in Parione, <strong>Da
-                    Enzo</strong> in Trastevere for authentic carbonara (line up at 6:45 PM), or <strong>Seu Pizza
-                    Illuminati</strong> for the modern Roman pie (book 3 weeks out).</p>
+        <div class="content-box">
+            <h2>The "Sold Out" Backdoor</h2>
+            <p>If the official museum sites are sold out, look for <strong>Guided Tours</strong>. Companies like <strong>Walks of Italy</strong> or <strong>The Roman Guy</strong> often have reserved blocks of tickets. Even a tour in a language you don't speak (like Spanish) is a valid way to get through the door.</p>
         </div>
 
-        <div class="tip" style="margin-top: 80px; padding: 30px; border: 1px solid var(--accent-orange); border-radius: 15px;">
-            <div class="tip-h">The Deep Guide</div>
-            <p>For those who want to master the city, explore our exhaustive resources:</p>
-            <p>→ <strong><a href="itineraries.html">Detailed Itineraries</a></strong> (1, 2, 3, & 5-Day Plans)</p>
-            <p>→ <strong><a href="booking.html">Master Booking Checklist</a></strong> (Venues & Flights)</p>
-        </div>
-
-        <a href="index.html" class="back-link">Back to the Pad</a>
+        <a href="planning.html" class="back-link">Back to Planning</a>
     </div>
 
     <script>

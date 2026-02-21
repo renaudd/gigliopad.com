@@ -32,10 +32,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('simple-fleur.svg'), url('simple-fleur.svg');
+      background-image: url('whitelogo.png'), url('whitelogo.png');
       background-position: 0 0, 100px 100px;
       background-size: 200px 200px;
-      opacity: 0.02;
+      opacity: 0.015;
       pointer-events: none;
       z-index: -1;
     }
@@ -81,6 +81,26 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             backdrop-filter: blur(20px);
         }
+
+    .close-btn {
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #1a1a1a;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: bold;
+    }
 
         .lang-menu.active { display: block; }
 
@@ -176,12 +196,15 @@
           select.value = code;
           select.dispatchEvent(new Event('change'));
           document.getElementById('langMenu').classList.remove('active');
+        } else {
+          setTimeout(() => changeLang(code, name), 500);
         }
       }
 
       document.addEventListener('click', (e) => {
         if (!e.target.closest('.custom-translate')) {
-          document.getElementById('langMenu').classList.remove('active');
+          const menu = document.getElementById('langMenu');
+          if (menu) menu.classList.remove('active');
         }
       });
     </script>
