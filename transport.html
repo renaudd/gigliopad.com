@@ -19,24 +19,22 @@
             top: 25px;
             right: 25px;
             z-index: 2000;
-            font-family: 'Outfit', sans-serif;
         }
 
         .translate-btn {
             background: rgba(252, 251, 247, 0.9);
             border: 1px solid rgba(0, 0, 0, 0.1);
             color: var(--text-dark);
-            padding: 10px 20px;
-            border-radius: 30px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            padding: 0;
         }
 
         .lang-menu {
@@ -80,12 +78,11 @@
 </head>
 <body>
     <div class="custom-translate">
-        <button class="translate-btn" onclick="toggleLangMenu()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <button class="translate-btn" onclick="toggleLangMenu()" title="Translate">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path
                     d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3.6 9h16.8M3.6 15h16.8M12 3a18.2 18.2 0 0 1 3 9 18.2 18.2 0 0 1-3 9M12 3a18.2 18.2 0 0 0-3 9 18.2 18.2 0 0 0 3 9" />
             </svg>
-            <span id="current-lang">Translate</span>
         </button>
         <div class="lang-menu" id="langMenu">
             <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
@@ -103,9 +100,11 @@
         <h1>Getting Around</h1>
 
         <div class="item">
-            <div class="item-h">Arrivals</div>
-            <p>Grab a fixed-rate taxi from FCO (€55) or take the Leonardo Express to Termini and then a taxi. Uber Black is your
-                best bet for central city moves. Taxis are always waiting at Largo di Torre Argentina.</p>
+            <div class="item-h">Arrivals (No Stress)</div>
+            <p>Only take official <strong>White Taxis</strong> from FCO. The fare is fixed at €55—confirm this with the driver by
+                asking "Tariffa fissa?" before you leave. Skip the Leonardo Express if you’re tired; instead, take the FL1 regional
+                train to <strong>Stazione Trastevere</strong> (€8) and then hop on Tram 8 to Arenula/Cairoli. It brings you right to
+                the neighborhood edge without the Termini madness.</p>
         </div>
 
         <div class="item">
@@ -126,7 +125,6 @@
             if (select) {
                 select.value = code;
                 select.dispatchEvent(new Event('change'));
-                document.getElementById('current-lang').innerText = name;
                 document.getElementById('langMenu').classList.remove('active');
             }
         }
