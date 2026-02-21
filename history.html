@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Giglio Story | Gigliopad Rome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="flower-logo.png">
+    <style>
+        :root {
+            --bg-color: #fcfbf7;
+            --accent-orange: #d15a2a;
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Translation Widget */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(252, 251, 247, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        #google_translate_element {
+            display: inline-block;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.65rem !important;
+            color: var(--text-dark) !important;
+            text-transform: uppercase;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .goog-te-menu-value span {
+            color: var(--text-dark) !important;
+            font-weight: 500 !important;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .etymology {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin: 60px 0;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--accent-orange);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switch">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="container">
+        <h1>Artsy Heritage</h1>
+
+        <div class="section">
+            <h2>The Painter’s Pad</h2>
+            <p>
+                Gigliopad isn’t just a rental; it’s a slice of Roman creative history. This building was the longtime
+                home and studio of Ramón Gaya, the legendary Spanish painter. You can still feel that
+                "artist-in-residence" energy in the high ceilings and the way the light hits the floor in the afternoon.
+            </p>
+            <p>
+                We’re located in Rione Regola, a neighborhood that’s managed to stay inherently cool while the rest of
+                the city gets glossy. It’s the kind of place where you’ll find a 400-year-old fountain next to a modern
+                art gallery.
+            </p>
+        </div>
+
+        <div class="etymology">
+            "Fleur-de-lis means lily flower in French; Giglio means lily in Italian. Vicolo del Giglio (Lily Lane)
+            derives its name from the crest of the House Farnese—a field of fleur-de-lis—whose historic palace stands
+            just steps away in Piazza Farnese."
+        </div>
+
+        <div class="section">
+            <h2>House Farnese Vibes</h2>
+            <p>
+                Being next door to the Piazza Farnese means we’re basically neighbors with royalty. The House Farnese
+                crest—that iconic field of lilies—gave our street its name. It’s a nice reminder that while we’re living
+                in a modern pad, we’re surrounded by some of the most powerful history in Europe.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link">Back to the Pad</a>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,it,es,fr,de,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

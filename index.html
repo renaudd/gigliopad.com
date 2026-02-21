@@ -160,6 +160,66 @@
       border-top: 1px solid var(--border-color);
     }
 
+    /* Translation Widget */
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(252, 251, 247, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+
+    #google_translate_element {
+      display: inline-block;
+    }
+
+    .goog-te-gadget {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 0.65rem !important;
+      color: var(--text-dark) !important;
+      text-transform: uppercase;
+    }
+
+    .goog-te-gadget-simple {
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .goog-te-menu-value span {
+      color: var(--text-dark) !important;
+      font-weight: 500 !important;
+    }
+
+    /* Footer Navigation */
+    .footer-nav {
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-orange);
+    }
+
     .property-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -305,9 +365,13 @@
 </head>
 
 <body>
+  <div class="lang-switch">
+    <div id="google_translate_element"></div>
+  </div>
+
   <div class="container">
     <div class="logo-container">
-      <img src="logo.png" alt="Giglio Pad Rome Logo">
+      <img src="logo.png" alt="Giglio Pad Rome">
     </div>
     
     <div class="countdown-container">
@@ -333,8 +397,8 @@
     </div>
     
     <div class="actions">
-      <button class="btn-more" id="learnMoreBtn">
-        <img src="orangelogo.png" alt="" class="btn-icon">
+      <button class="btn-primary" id="learnMoreBtn">
+        <img src="flower-logo.png" alt="" class="btn-icon">
         Details
       </button>
       <div class="info-panel" id="infoPanel">
@@ -362,7 +426,7 @@
             </ul>
           </div>
           <form class="signup-form"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD_XU5YvYm_J_7vJ_zXU_W_X_J_X_J_X_J_X_J_X_J_X/formResponse"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfD_XU5YvYm_J_7vJ_zXU_W_X_J_X_J_X_J_X_J_X_J_X_J_X/formResponse"
             method="POST" target="_blank">
             <div class="form-title">Become a Regola</div>
             <div class="input-group">
@@ -373,6 +437,13 @@
         </div>
       </div>
     </div>
+<nav class="footer-nav">
+  <a href="history.html">History</a>
+  <a href="food.html">Food</a>
+  <a href="planning.html">Planning</a>
+  <a href="transport.html">Getting Around</a>
+  <a href="map.html">Map</a>
+</nav>
   </div>
 <script>
   // Countdown Timer
@@ -417,6 +488,18 @@
     }
   });
 </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,it,es,fr,de,zh-CN,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

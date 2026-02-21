@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip | Gigliopad Rome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="flower-logo.png">
+    <style>
+        :root {
+            --bg-color: #fcfbf7;
+            --accent-orange: #d15a2a;
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Translation Widget */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(252, 251, 247, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        #google_translate_element {
+            display: inline-block;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 0.65rem !important;
+            color: var(--text-dark) !important;
+            text-transform: uppercase;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .goog-te-menu-value span {
+            color: var(--text-dark) !important;
+            font-weight: 500 !important;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .tip {
+            margin-bottom: 50px;
+        }
+
+        .tip-h {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switch">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="container">
+        <h1>Planning</h1>
+
+        <div class="tip">
+            <div class="tip-h">Stay Connected</div>
+            <p>We’ve equipped the pad with 6kW of high-capacity power and high-speed Wi-Fi. Whether you’re editing
+                photos, streaming, or running a workstation, we’ve got the juice for all your tech.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-h">Pack Smart</div>
+            <p>Rome is a walking city. Bring your best sneakers (the artsier, the better). Regola is casual but chic, so
+                think breathable fabrics for the Roman summer and layers for the mild winters.</p>
+        </div>
+
+        <div class="tip">
+            <div class="tip-h">Insider Access</div>
+            <p>Download the 'Free Now' app for taxis, but honestly, you won't need it. Everything you want to see—Piazza
+                Navona, The Pantheon, and the best bars in Trastevere—is right outside the door.</p>
+        </div>
+
+        <a href="index.html" class="back-link">Back to the Pad</a>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,it,es,fr,de,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
