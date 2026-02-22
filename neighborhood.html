@@ -233,6 +233,7 @@
             font-size: 0.8rem;
         }
     
+        
         /* Cookie Consent Banner */
         .cookie-banner {
             position: fixed;
@@ -250,6 +251,8 @@
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
             box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            text-transform: none;
+            letter-spacing: 0;
         }
         .cookie-banner.visible { bottom: 40px; }
         .cookie-banner p {
@@ -258,8 +261,6 @@
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             font-family: 'Outfit', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
         }
         .cookie-actions { display: flex; justify-content: center; gap: 15px; }
         .cookie-btn {
@@ -278,7 +279,7 @@
         .cookie-btn.accept { background: #c5a059; color: #0a141d; }
         .cookie-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
 
-        /* Info Panel Contrast Fix */
+        /* Info Panel Contrast & Watermark Fix */
         .info-panel.visible {
             background-color: #0a141d !important;
             color: #ffffff !important;
@@ -287,6 +288,11 @@
             margin-right: -40px !important;
             border-radius: 0 !important;
             border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
+            isolation: isolate !important;
+        }
+        .info-panel.visible::before {
+            opacity: 0.08 !important;
+            z-index: -1 !important;
         }
         .info-panel.visible h1, .info-panel.visible h2, .info-panel.visible h3, 
         .info-panel.visible p, .info-panel.visible li, .info-panel.visible span,
@@ -389,23 +395,26 @@
         </div>
 
         <div class="trivia-container">
-            <div class="trivia-question">Wait, why is it called "Regola"?</div>
+            <div class="trivia-question">Where does the name "Regola" come from?</div>
             <div class="trivia-options">
                 <button class="trivia-option" data-correct="true"
-                    onclick="selectTriviaOption(this, true, 'regola-feedback')">River Sand</button>
-                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">Trade
-                    Regulations</button>
-                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">Monastic
-                    Rules</button>
-                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">Regal
-                    Palaces</button>
+                    onclick="selectTriviaOption(this, true, 'regola-feedback')">A. "Arenula", referring to the sand ("rena") from the Tiber River.</button>
+                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">B. “Regula”, which means “rule”, because the rione had commercial and artisanal regulations.</button>
+                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">C. "Regale", which means "regal", describing the many palaces that occupied the rione.</button>
+                <button class="trivia-option" onclick="selectTriviaOption(this, false, 'regola-feedback')">D. "Regolanti", referring to "tail-eaters" ('mangiacode') who consumed the local delicacy, coda alla vaccinara.</button>
             </div>
             <div class="trivia-feedback" id="regola-feedback">
                 <span class="feedback-status"></span>
-                <p>The name Regola comes from <em>Arenula</em>, meaning "fine sand." Before the high walls were built in the
-                    1870s, the Tiber used to flood this area, leaving behind soft silt that defined the landscape.</p>
-                <p>It was a neighborhood of river-workers, tanners, and craftsmen whose history is still written in the narrow
-                    street names around you.</p>
+                <p>The name Regola is a linguistic evolution of the Latin word "Arenula" (which became Renula in the local dialect).
+                    This refers to the rena (fine silt or sand) that the Tiber River deposited along its banks during its frequent
+                    floods.</p>
+                <p>Before the high stone walls (lungotevere) were built in the late 19th century, the neighborhood was physically
+                    defined by its relationship to the river. It was a gritty, industrious area filled with tanners and craftsmen who
+                    needed the river water for their work. You can still see this history in the street names surrounding the apartment,
+                    like Via dei Vaccinari (tanners).</p>
+                <p>The "Rena" was a constant reminder of the river's power. Today, that name survives not just in the Rione's title, but
+                    also in the Church of San Carlo ai Catinari, which is officially known as San Biagio e Carlo ai Catinari in Arenula.
+                </p>
             </div>
         </div>
 
@@ -437,6 +446,7 @@
             color: var(--accent-gold);
         }
     
+        
         /* Cookie Consent Banner */
         .cookie-banner {
             position: fixed;
@@ -454,6 +464,8 @@
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
             box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            text-transform: none;
+            letter-spacing: 0;
         }
         .cookie-banner.visible { bottom: 40px; }
         .cookie-banner p {
@@ -462,8 +474,6 @@
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             font-family: 'Outfit', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
         }
         .cookie-actions { display: flex; justify-content: center; gap: 15px; }
         .cookie-btn {
@@ -482,7 +492,7 @@
         .cookie-btn.accept { background: #c5a059; color: #0a141d; }
         .cookie-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
 
-        /* Info Panel Contrast Fix */
+        /* Info Panel Contrast & Watermark Fix */
         .info-panel.visible {
             background-color: #0a141d !important;
             color: #ffffff !important;
@@ -491,6 +501,11 @@
             margin-right: -40px !important;
             border-radius: 0 !important;
             border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
+            isolation: isolate !important;
+        }
+        .info-panel.visible::before {
+            opacity: 0.08 !important;
+            z-index: -1 !important;
         }
         .info-panel.visible h1, .info-panel.visible h2, .info-panel.visible h3, 
         .info-panel.visible p, .info-panel.visible li, .info-panel.visible span,
