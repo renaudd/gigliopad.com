@@ -14,10 +14,10 @@
   <style>
     :root {
       --bg-color: #fcfbf7;
-      --accent-orange: #d15a2a;
-      --text-dark: #1a1a1a;
-      --text-muted: #555555;
-      --border-color: rgba(0, 0, 0, 0.1);
+      --accent-gold: #c5a059;
+      --text-dark: #0a141d;
+      --text-muted: #4a4a4a;
+      --border-color: rgba(10, 20, 29, 0.1);
     }
 
     body {
@@ -39,10 +39,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('whitelogo.png'), url('whitelogo.png');
-      background-position: 0 0, 40px 40px;
-      background-size: 80px 80px;
-      opacity: 0.02;
+      background-image: url('orangelogo.png'), url('orangelogo.png');
+      background-position: 0 0, 80px 80px;
+      background-size: 160px 160px;
+      opacity: 0.04;
       pointer-events: none;
       z-index: -1;
     }
@@ -99,8 +99,8 @@
     }
 
     .lang-option:hover {
-      background: rgba(209, 90, 42, 0.1);
-      color: var(--accent-orange);
+      background: rgba(197, 160, 89, 0.1);
+      color: var(--accent-gold);
     }
 
     .container {
@@ -129,7 +129,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       letter-spacing: 2px;
-      color: var(--accent-orange);
+      color: var(--accent-gold);
       margin-bottom: 30px;
       font-style: italic;
     }
@@ -217,9 +217,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('whitelogo.png'), url('whitelogo.png');
-      background-position: 0 0, 75px 75px;
-      background-size: 150px 150px;
+      background-image: url('orangelogo.png'), url('orangelogo.png');
+      background-position: 0 0, 150px 150px;
+      background-size: 300px 300px;
       opacity: 0.03;
       pointer-events: none;
       z-index: 0;
@@ -252,13 +252,98 @@
     }
 
     .footer-nav a:hover {
-      color: var(--accent-orange);
+      color: var(--accent-gold);
     }
 
-    .info-text a {
+    /* Hamburger Menu */
+    .menu-toggle {
+        position: fixed;
+        top: 25px;
+        left: 25px;
+        z-index: 3000;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .hamburger-icon {
+        width: 28px;
+        height: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--text-dark);
+        transition: all 0.3s ease;
+    }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(252, 251, 247, 0.98);
+        z-index: 2900;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        backdrop-filter: blur(20px);
+    }
+
+    .nav-overlay.active {
+        left: 0;
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .nav-links a {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent-gold);
+    }
+
+    .menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+    .menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    a {
         color: inherit;
         text-decoration: none;
         font-weight: bold;
+    }
+
+    .footer-nav a {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
     .property-grid {
@@ -288,7 +373,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      border-left: 2px solid var(--accent-orange);
+      border-left: 2px solid var(--accent-gold);
       padding-left: 25px;
     }
 
@@ -406,7 +491,26 @@
 </head>
 
 <body>
-  <div class="custom-translate">
+    <div class="menu-toggle" id="menuToggle">
+      <div class="hamburger-icon">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+    </div>
+    
+    <div class="nav-overlay" id="navOverlay">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="food.html">Dining</a></li>
+        <li><a href="planning.html">Planning</a></li>
+        <li><a href="transport.html">Transport</a></li>
+        <li><a href="map.html">Map Guide</a></li>
+      </ul>
+    </div>
+
+    <div class="custom-translate">
     <button class="translate-btn" onclick="toggleLangMenu()" title="Translate">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path
@@ -414,13 +518,13 @@
       </svg>
     </button>
     <div class="lang-menu" id="langMenu">
-      <div class="lang-option" onclick="changeLang('en', 'English')">English</div>
-      <div class="lang-option" onclick="changeLang('it', 'Italiano')">Italiano</div>
-      <div class="lang-option" onclick="changeLang('es', 'Español')">Español</div>
-      <div class="lang-option" onclick="changeLang('fr', 'Français')">Français</div>
-      <div class="lang-option" onclick="changeLang('de', 'Deutsch')">Deutsch</div>
-      <div class="lang-option" onclick="changeLang('zh-CN', '中文')">中文</div>
-      <div class="lang-option" onclick="changeLang('ja', '日本語')">日本語</div>
+      <div class="lang-option" onclick="changeLang('en')">English</div>
+      <div class="lang-option" onclick="changeLang('it')">Italiano</div>
+      <div class="lang-option" onclick="changeLang('es')">Español</div>
+      <div class="lang-option" onclick="changeLang('fr')">Français</div>
+      <div class="lang-option" onclick="changeLang('de')">Deutsch</div>
+      <div class="lang-option" onclick="changeLang('zh-CN')">中文</div>
+      <div class="lang-option" onclick="changeLang('ja')">日本語</div>
     </div>
   </div>
   <div id="google_translate_element" style="display:none"></div>
@@ -459,29 +563,30 @@
       </button>
       <div class="info-panel" id="infoPanel">
         <div class="property-grid">
+            <div class="info-text">
+              <p>
+                Quintessential Rome meets modern artsy energy. Giglio Pad is a sophisticated hub nestled in one of the
+                    city's most vibrant <a href="neighborhood.html">rioni</a>. We're just one block from <i>Campo de' Fiori</i>—the
+                    perfect spot for morning
+                    coffee or late-night <a href="transport.html">exploration</a>.
+                    </p>
 
-            <p>
-              Quintessential Rome meets modern artsy energy. Giglio Pad is a sophisticated hub nestled in one of the
-              city's most vibrant <a href="neighborhood.html"><b>rioni</b></a>. We're just one block from <i>Campo de' Fiori</i>—the
-              perfect spot for morning
-              coffee or late-night <a href="transport.html"><b>exploration</b></a>.
-            </p>
-
-            <p>
-              Designed with a creative touch, this top-floor residence features unique boutique-style "sleeping nooks,"
-              a high-capacity electric supply (6kW), and central A/C to keep you cool during the Roman summer.
-            </p>
-          </div>
-          <div class="info-stats">
-            <ul class="highlights">
-              <li>THE VIBE <span>Artsy, authentic, inherently cool.</span></li>
-              <li>LOCATION <span>One block from Campo de' Fiori.</span></li>
-              <li>COMFORT <span>6kW Power / central A/C & Heating.</span></li>
-              <li>LAYOUT <span>Boutique cabin-style sleeping alcoves.</span></li>
-              <li>AMENITIES <span>Dishwasher, Washer/Dryer in unit.</span></li>
-              <li>HERITAGE <span>The former home of painter Ramón Gaya.</span></li>
-            </ul>
-          </div>
+                <p>
+                  Designed with a creative touch, this top-floor residence features unique boutique-style "sleeping nooks,"
+                  a high-capacity electric supply (6kW), and central A/C to keep you cool during the Roman summer.
+                </p>
+                </div>
+                <div class="info-stats">
+                  <ul class="highlights">
+                    <li>THE VIBE <span>Artsy, authentic, inherently cool.</span></li>
+                    <li>LOCATION <span>One block from Campo de' Fiori.</span></li>
+                    <li>COMFORT <span>6kW Power / central A/C & Heating.</span></li>
+                    <li>LAYOUT <span>Boutique cabin-style sleeping alcoves.</span></li>
+                    <li>AMENITIES <span>Dishwasher, Washer/Dryer in unit.</span></li>
+                    <li>HERITAGE <span>The former home of painter Ramón Gaya.</span></li>
+                  </ul>
+                </div>
+        </div>
           <form class="signup-form"
             action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevxk1s4CMA6QLDlMQGz9NLxuxiW86bXUTTtjZjgrShl969YQ/formResponse"
             method="POST" target="_blank">

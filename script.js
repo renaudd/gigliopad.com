@@ -5,15 +5,15 @@ function toggleLangMenu() {
     if (menu) menu.classList.toggle('active');
 }
 
-function changeLang(code, name) {
+function changeLang(code) {
     const select = document.querySelector('.goog-te-combo');
     if (select) {
         select.value = code;
-        select.dispatchEvent(new Event('change'));
+        select.dispatchEvent(new Event('change', { bubbles: true }));
         const menu = document.getElementById('langMenu');
         if (menu) menu.classList.remove('active');
     } else {
-        setTimeout(() => changeLang(code, name), 500);
+        setTimeout(() => changeLang(code), 300);
     }
 }
 
@@ -75,3 +75,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Nav Overlay Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (menuToggle && navOverlay) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});
+
+// Interactive Trivia Logic
+function selectTriviaOption(btn, isCorrect, feedbackId) {
+    const parentContainer = btn.closest('.trivia-container');
+    const options = parentContainer.querySelectorAll('.trivia-option');
+    const feedback = document.getElementById(feedbackId);
+    const feedbackStatus = feedback.querySelector('.feedback-status');
+
+    // Disable all options and highlight correct one
+    options.forEach(opt => {
+        opt.style.pointerEvents = 'none';
+        if (opt.getAttribute('data-correct') === 'true') {
+            opt.classList.add('correct');
+        } else {
+            opt.classList.add('incorrect-reveal');
+        }
+    });
+
+    // Highlight selected if incorrect
+    if (!isCorrect) {
+        btn.classList.add('incorrect-choice');
+    }
+
+    // Update feedback status text
+    if (feedbackStatus) {
+        feedbackStatus.innerText = isCorrect ? 'Correct!' : 'Not quite.';
+        feedbackStatus.style.color = isCorrect ? 'var(--accent-gold)' : '#888';
+    }
+
+    // Show feedback
+    if (feedback) {
+        feedback.style.display = 'block';
+        setTimeout(() => {
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+}
