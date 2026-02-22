@@ -12,9 +12,43 @@ function changeLang(code) {
         select.dispatchEvent(new Event('change', { bubbles: true }));
         const menu = document.getElementById('langMenu');
         if (menu) menu.classList.remove('active');
+
+        // Persist selection
+        localStorage.setItem('selectedLanguage', code);
+        // Set Google Translate cookie (optional but helpful for cross-page)
+        document.cookie = `googtrans=/en/${code}; path=/;`;
+        if (code === 'en') {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
     } else {
         setTimeout(() => changeLang(code), 300);
     }
+}
+
+// Language Persistence & Cookie Consent initialization
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLanguage');
+    if (savedLang && savedLang !== 'en') {
+        changeLang(savedLang);
+    }
+
+    const consent = localStorage.getItem('cookieConsent');
+    const banner = document.getElementById('cookie-consent');
+    if (!consent && banner) {
+        banner.classList.add('visible');
+    }
+});
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    const banner = document.getElementById('cookie-consent');
+    if (banner) banner.classList.remove('visible');
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    const banner = document.getElementById('cookie-consent');
+    if (banner) banner.classList.remove('visible');
 }
 
 document.addEventListener('click', (e) => {
