@@ -47,30 +47,36 @@
       z-index: -1;
     }
 
-    .goog-te-banner-frame, .goog-te-gadget { display: none !important; }
-    body { top: 0 !important; }
+    .goog-te-banner-frame,
+    .goog-te-gadget {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
 
     .custom-translate {
-        position: fixed;
-        top: 25px;
-        right: 25px;
-        z-index: 2000;
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      z-index: 2000;
     }
 
     .translate-btn {
-        background: rgba(252, 251, 247, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        color: var(--text-dark);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        padding: 0;
+      background: rgba(252, 251, 247, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--text-dark);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      padding: 0;
     }
 
     .lang-menu {
@@ -84,11 +90,13 @@
       padding: 10px 0;
       display: none;
       min-width: 160px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(20px);
     }
 
-    .lang-menu.active { display: block; }
+    .lang-menu.active {
+      display: block;
+    }
 
     .lang-option {
       padding: 10px 25px;
@@ -224,6 +232,7 @@
       pointer-events: none;
       z-index: 0;
     }
+
     .info-panel.visible {
       max-height: 1200px;
       padding-top: 60px;
@@ -257,86 +266,88 @@
 
     /* Hamburger Menu */
     .menu-toggle {
-        position: fixed;
-        top: 25px;
-        left: 25px;
-        z-index: 3000;
-        cursor: pointer;
-        padding: 5px;
+      position: fixed;
+      top: 25px;
+      left: 25px;
+      z-index: 3000;
+      cursor: pointer;
+      padding: 5px;
     }
 
     .hamburger-icon {
-        width: 28px;
-        height: 18px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      width: 28px;
+      height: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .hamburger-line {
-        width: 100%;
-        height: 1px;
-        background-color: var(--text-dark);
-        transition: all 0.3s ease;
+      width: 100%;
+      height: 1px;
+      background-color: var(--text-dark);
+      transition: all 0.3s ease;
     }
 
     .nav-overlay {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(252, 251, 247, 0.98);
-        z-index: 2900;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(252, 251, 247, 0.98);
+      z-index: 2900;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      backdrop-filter: blur(20px);
     }
 
     .nav-overlay.active {
-        left: 0;
+      left: 0;
     }
 
     .nav-links {
-        list-style: none;
-        padding: 0;
-        text-align: center;
+      list-style: none;
+      padding: 0;
+      text-align: center;
     }
 
     .nav-links li {
-        margin: 25px 0;
+      margin: 25px 0;
     }
 
     .nav-links a {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        color: var(--text-dark);
-        text-decoration: none;
-        font-weight: 400;
-        transition: color 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-        color: var(--accent-gold);
+      color: var(--accent-gold);
     }
 
     .menu-toggle.active .hamburger-line:nth-child(1) {
-        transform: translateY(8.5px) rotate(45deg);
+      transform: translateY(8.5px) rotate(45deg);
     }
+
     .menu-toggle.active .hamburger-line:nth-child(2) {
-        opacity: 0;
+      opacity: 0;
     }
+
     .menu-toggle.active .hamburger-line:nth-child(3) {
-        transform: translateY(-8.5px) rotate(-45deg);
+      transform: translateY(-8.5px) rotate(-45deg);
     }
 
     a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: bold;
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .footer-nav a {
@@ -487,120 +498,148 @@
         font-size: 1.8rem;
       }
     }
-  
-        
-        /* Cookie Consent Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -150px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
-            max-width: 500px;
-            background: rgba(10, 20, 29, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 20px;
-            padding: 25px;
-            z-index: 3000;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-            text-transform: none;
-            letter-spacing: 0;
-        }
-        .cookie-banner.visible { bottom: 40px; }
-        .cookie-banner p {
-            margin: 0 0 20px 0;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            font-family: 'Outfit', sans-serif;
-        }
-        .cookie-actions { display: flex; justify-content: center; gap: 15px; }
-        .cookie-btn {
-            background: transparent;
-            border: 1px solid #c5a059;
-            color: #c5a059;
-            padding: 10px 30px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        .cookie-btn.accept { background: #c5a059; color: #0a141d; }
-        .cookie-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
 
-        /* Info Panel Contrast & Watermark Fix */
-        .info-panel.visible {
-            background-color: #0a141d !important;
-            color: #ffffff !important;
-            padding: 60px 40px !important;
-            margin-left: -40px !important;
-            margin-right: -40px !important;
-            border-radius: 0 !important;
-            border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
-            isolation: isolate !important;
-        }
-        .info-panel.visible::before {
-            opacity: 0.08 !important;
-            z-index: -1 !important;
-        }
-        .info-panel.visible h1, .info-panel.visible h2, .info-panel.visible h3, 
-        .info-panel.visible p, .info-panel.visible li, .info-panel.visible span,
-        .info-panel.visible .feature-card h3, .info-panel.visible .feature-card p,
-        .info-panel.visible .form-title {
-            color: #ffffff !important;
-        }
-        .info-panel.visible .feature-card {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border-color: rgba(197, 160, 89, 0.2) !important;
-        }
-        .info-panel.visible input[type="email"] {
-            border-bottom-color: #ffffff !important;
-            color: #ffffff !important;
-        }
-        .info-panel.visible .btn-submit {
-            background: #c5a059 !important;
-            color: #0a141d !important;
-        }
 
-    </style>
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 500px;
+      background: rgba(10, 20, 29, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 20px;
+      padding: 25px;
+      z-index: 3000;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .cookie-banner.visible {
+      bottom: 40px;
+    }
+
+    .cookie-banner p {
+      margin: 0 0 20px 0;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .cookie-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .cookie-btn {
+      background: transparent;
+      border: 1px solid #c5a059;
+      color: #c5a059;
+      padding: 10px 30px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .cookie-btn.accept {
+      background: #c5a059;
+      color: #0a141d;
+    }
+
+    .cookie-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+    }
+
+    /* Info Panel Contrast & Watermark Fix */
+    .info-panel.visible {
+      background-color: #0a141d !important;
+      color: #ffffff !important;
+      padding: 60px 40px !important;
+      margin-left: -40px !important;
+      margin-right: -40px !important;
+      border-radius: 0 !important;
+      border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
+      isolation: isolate !important;
+    }
+
+    .info-panel.visible::before {
+      opacity: 0.08 !important;
+      z-index: -1 !important;
+    }
+
+    .info-panel.visible h1,
+    .info-panel.visible h2,
+    .info-panel.visible h3,
+    .info-panel.visible p,
+    .info-panel.visible li,
+    .info-panel.visible span,
+    .info-panel.visible .feature-card h3,
+    .info-panel.visible .feature-card p,
+    .info-panel.visible .form-title {
+      color: #ffffff !important;
+    }
+
+    .info-panel.visible .feature-card {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-color: rgba(197, 160, 89, 0.2) !important;
+    }
+
+    .info-panel.visible input[type="email"] {
+      border-bottom-color: #ffffff !important;
+      color: #ffffff !important;
+    }
+
+    .info-panel.visible .btn-submit {
+      background: #c5a059 !important;
+      color: #0a141d !important;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div id="cookie-consent" class="cookie-banner">
-        <p>This site uses cookies to remember your language preference and improve your experience. By continuing to use the site, you agree to our use of cookies.</p>
-        <div class="cookie-actions">
-            <button onclick="acceptCookies()" class="cookie-btn accept">Accept</button>
-            <button onclick="declineCookies()" class="cookie-btn">Decline</button>
-        </div>
+  <div id="cookie-consent" class="cookie-banner">
+    <p>This site uses cookies to remember your language preference and improve your experience. By continuing to use the
+      site, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button onclick="acceptCookies()" class="cookie-btn accept">Accept</button>
+      <button onclick="declineCookies()" class="cookie-btn">Decline</button>
     </div>
+  </div>
 
-    <div class="menu-toggle" id="menuToggle">
-      <div class="hamburger-icon">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </div>
+  <div class="menu-toggle" id="menuToggle">
+    <div class="hamburger-icon">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </div>
-    
-    <div class="nav-overlay" id="navOverlay">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="food.html">Dining</a></li>
-        <li><a href="planning.html">Planning</a></li>
-        <li><a href="transport.html">Transport</a></li>
-        <li><a href="map.html">Map Guide</a></li>
-      </ul>
-    </div>
+  </div>
 
-    <div class="custom-translate">
+  <div class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="food.html">Dining</a></li>
+      <li><a href="planning.html">Planning</a></li>
+      <li><a href="transport.html">Transport</a></li>
+      <li><a href="map.html">Map Guide</a></li>
+    </ul>
+  </div>
+
+  <div class="custom-translate">
     <button class="translate-btn" onclick="toggleLangMenu()" title="Translate">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path
@@ -623,7 +662,7 @@
     <div class="logo-container">
       <img src="logo.png" alt="Giglio Pad Rome">
     </div>
-    
+
     <div class="countdown-container">
       <div class="countdown-title">Arriving May 2026</div>
       <div class="timer" id="timer">
@@ -645,7 +684,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="actions">
       <button class="btn-more" id="learnMoreBtn">
         <img src="flower-logo.png" alt="" class="btn-icon">
@@ -653,49 +692,50 @@
       </button>
       <div class="info-panel" id="infoPanel">
         <div class="property-grid">
-            <div class="info-text">
-              <p>
-                Quintessential Rome meets modern artsy energy. Giglio Pad is a sophisticated hub nestled in one of the
-                    city's most vibrant <a href="neighborhood.html">rioni</a>. We're just one block from <i>Campo de' Fiori</i>—the
-                    perfect spot for morning
-                    coffee or late-night <a href="transport.html">exploration</a>.
-                    </p>
+          <div class="info-text">
+            <p>
+              Quintessential Rome meets modern artsy energy. Giglio Pad is a sophisticated hub nestled in one of the
+              city's most vibrant <a href="neighborhood.html">rioni</a>. We're just one block from <i>Campo de'
+                Fiori</i>—the
+              perfect spot for morning
+              coffee or late-night <a href="transport.html">exploration</a>.
+            </p>
 
-                <p>
-                  Designed with a creative touch, this top-floor residence features unique boutique-style "sleeping nooks,"
-                  a high-capacity electric supply (6kW), and central A/C to keep you cool during the Roman summer.
-                </p>
-                </div>
-                <div class="info-stats">
-                  <ul class="highlights">
-                    <li>THE VIBE <span>Artsy, authentic, inherently cool.</span></li>
-                    <li>LOCATION <span>One block from Campo de' Fiori.</span></li>
-                    <li>COMFORT <span>6kW Power / central A/C & Heating.</span></li>
-                    <li>LAYOUT <span>Boutique cabin-style sleeping alcoves.</span></li>
-                    <li>AMENITIES <span>Dishwasher, Washer/Dryer in unit.</span></li>
-                    <li>HERITAGE <span>The former home of painter Ramón Gaya.</span></li>
-                  </ul>
-                </div>
+            <p>
+              Designed with a creative touch, this top-floor residence features unique boutique-style "sleeping nooks,"
+              a high-capacity electric supply (6kW), and central A/C to keep you cool during the Roman summer.
+            </p>
+          </div>
+          <div class="info-stats">
+            <ul class="highlights">
+              <li>THE VIBE <span>Artsy, authentic, inherently cool.</span></li>
+              <li>LOCATION <span>One block from Campo de' Fiori.</span></li>
+              <li>COMFORT <span>6kW Power / central A/C & Heating.</span></li>
+              <li>LAYOUT <span>Boutique cabin-style sleeping alcoves.</span></li>
+              <li>AMENITIES <span>Dishwasher, Washer/Dryer in unit.</span></li>
+              <li>HERITAGE <span>The former home of painter Ramón Gaya.</span></li>
+            </ul>
+          </div>
         </div>
-          <form class="signup-form"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevxk1s4CMA6QLDlMQGz9NLxuxiW86bXUTTtjZjgrShl969YQ/formResponse"
-            method="POST" target="_blank">
-            <div class="form-title">Become a Regola</div>
-            <div class="input-group">
-              <input type="email" name="entry.1877113444" placeholder="Email Address" required>
-              <button type="submit" class="btn-submit">Submit</button>
-            </div>
-          </form>
-        </div>
+        <form class="signup-form"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevxk1s4CMA6QLDlMQGz9NLxuxiW86bXUTTtjZjgrShl969YQ/formResponse"
+          method="POST" target="_blank">
+          <div class="form-title">Become a Regola</div>
+          <div class="input-group">
+            <input type="email" name="entry.1877113444" placeholder="Email Address" required>
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
       </div>
-      <nav class="footer-nav">
-        <a href="history.html">History</a>
-        <a href="food.html">Food</a>
-        <a href="planning.html">Planning</a>
-        <a href="transport.html">Getting Around</a>
-        <a href="map.html">Map</a>
-      </nav>
-      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="history.html">History</a>
+      <a href="food.html">Food</a>
+      <a href="planning.html">Planning</a>
+      <a href="transport.html">Getting Around</a>
+      <a href="map.html">Map</a>
+    </nav>
+  </div>
   <script src="script.js"></script>
 
   <script type="text/javascript">
