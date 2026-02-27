@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bellissima Bachelorette | Gigliopad Rome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="flower-logo.png">
+    <style>
+        :root {
+            --bg-color: #fcfbf7;
+            --accent-gold: #c5a059;
+            --text-dark: #0a141d;
+            --text-muted: #4a4a4a;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-color);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('goldfleurdelisplusspace.png'), url('goldfleurdelisplusspace.png');
+            background-position: 0 0, 165px 110px;
+            background-size: 330px 220px;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .itinerary-block {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        .day-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .itinerary-content {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .itinerary-content strong {
+            color: var(--text-dark);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>La Bellissima Bachelorette</h1>
+        <p style="text-align: center; margin-bottom: 60px;">Elegance, sunshine, and excessive amounts of pasta. Welcome
+            to the ultimate Roman Bachelorette at Gigliopad.</p>
+
+        <div class="itinerary-block">
+            <span class="day-label">Day One</span>
+            <div class="itinerary-content">
+                <strong><a href="https://maps.app.goo.gl/sWmQHT2qfZBaDPVc9" target="_blank">Cooking class</a></strong>
+                followed by <strong><a href="https://maps.app.goo.gl/ZuGwvBSH1zUxDh2t6" target="_blank">night
+                        clubs</a></strong>.
+            </div>
+        </div>
+
+        <div class="itinerary-block">
+            <span class="day-label">Day Two</span>
+            <div class="itinerary-content">
+                <strong><a href="https://maps.app.goo.gl/xeV7z3CJMTAzhtKQA" target="_blank">Aerials class</a></strong>
+                or
+                <strong><a href="https://maps.app.goo.gl/eqnRYchmt6h75d31A" target="_blank">yoga</a></strong>,
+                <strong><a href="https://maps.app.goo.gl/nHC8NmeAsCEoAqEL7" target="_blank">Galeria
+                        Borghese</a></strong>,
+                <strong><a href="https://maps.app.goo.gl/tDaAJVdDULVThmPJ6" target="_blank">nail salon</a></strong>,
+                stand-up <strong><a href="https://comedyfiori.com" target="_blank">comedy</a></strong> or
+                <strong><a href="https://maps.app.goo.gl/7goWV6X912wrTyz36" target="_blank">live music</a></strong>.
+            </div>
+        </div>
+
+        <div class="itinerary-block">
+            <span class="day-label">Day Three</span>
+            <div class="itinerary-content">
+                <strong><a href="https://maps.app.goo.gl/Sm91buDSmguFG2KS9" target="_blank">Bike</a></strong> the Appian
+                Way or wine-tasting
+                <strong><a href="https://maps.app.goo.gl/nEMvmDEgVcoU9pFv6" target="_blank">tour</a></strong>.
+                Or, bike the appian way to the <strong><a href="https://maps.app.goo.gl/k1u4DrryCuYWHhkA7"
+                        target="_blank">vineyards</a></strong>.
+            </div>
+        </div>
+
+        <div class="itinerary-block">
+            <span class="day-label">Day Four</span>
+            <div class="itinerary-content">
+                Spa day at <strong><a href="https://maps.app.goo.gl/1ox7jyiRVKHPihL1A" target="_blank">Therma
+                        Oasi</a></strong> or
+                <strong><a href="https://maps.app.goo.gl/WNkMdp77U65cGDiC8" target="_blank">Terme dei Papi</a></strong>.
+                For something closer to Rome, <strong><a
+                        href="https://www.qcterme.com/it/destinazioni/roma/qc-spa-roma/orari-e-prezzi-roma"
+                        target="_blank">QC Termeroma</a></strong>.
+            </div>
+        </div>
+
+        <div class="itinerary-block">
+            <span class="day-label">Day Five</span>
+            <div class="itinerary-content">
+                Vatican or Colosseum or Spanish Steps with shopping. Evening picnic at the
+                <strong><a href="https://maps.app.goo.gl/PEKhPjPTt94HSB4z5" target="_blank">rose garden</a></strong>.
+            </div>
+        </div>
+
+        <a href="planning.html" class="back-link">Back to Planning</a>
+    </div>
+</body>
+
+</html>

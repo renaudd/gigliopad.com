@@ -144,6 +144,148 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        .trivia-container {
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 600px;
+            color: var(--text-dark);
+        }
+
+        .trivia-layout-side {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .trivia-content { flex: 1; }
+
+        .trivia-image-side {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .trivia-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+        }
+
+        .trivia-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .trivia-option {
+            background: none;
+            border: none;
+            padding: 0;
+            color: rgba(10, 20, 29, 0.6);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .trivia-option:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .trivia-option.correct {
+            color: var(--text-dark) !important;
+            font-weight: bold;
+        }
+
+        .trivia-option.incorrect-reveal {
+            color: rgba(10, 20, 29, 0.2) !important;
+        }
+
+        .trivia-option.incorrect-choice {
+            text-decoration: line-through;
+            color: rgba(10, 20, 29, 0.2) !important;
+        }
+
+        .trivia-feedback {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            display: none;
+        }
+
+        .feedback-status {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: #000000;
+        }
+
+        .trivia-feedback p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .checklist-section {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .time {
+            font-weight: 600;
+            min-width: 140px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .practical-note {
+            background: rgba(197, 160, 89, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .trivia-layout-side {
+                flex-direction: column;
+                text-align: center;
+            }
+            .trivia-image-side {
+                order: -1;
+            }
+            .trivia-options {
+                align-items: center;
+            }
+        }
     
         
         /* Cookie Consent Banner */
@@ -258,20 +400,29 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
+        <div class="branding-header" style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html">
+                <img src="flower-logo.png" alt="Gigliopad Rome" class="branding-logo" style="width: 100px;">
+            </a>
+        </div>
         <h1>Planning</h1>
 
         <div class="tip">
             <div class="tip-h">The Artsy Day (Day 1)</div>
-            <p>Kick things off with the "Welcome to Rome" 3D cinema to see the city's evolution. Outside lunch at <a
-                    href="https://armandoalpantheon.it/prenota/" target="_blank">Armando al Pantheon</a> is
+            <p>Kick things off with the "Welcome to Rome" 3D cinema to see the city's evolution. Outside lunch at <strong><a
+                        href="https://www.google.com/maps/search/?api=1&query=Ghetto+Ebraico+Rome" target="_blank">Ghetto
+                        Ebraico</a></strong> is
                 non-negotiable. Cap the night at <a href="https://www.seupizza.com/" target="_blank">Seu Pizza Illuminati</a>—book
                 this 3 weeks in advance.</p>
         </div>
 
         <div class="tip">
             <div class="tip-h">Local Vibe (Day 2)</div>
-            <p>Beat the heat at the <a href="https://ticketing.colosseo.it/en/" target="_blank">Colosseum</a> at 8:30 AM. Grab lunch
-                standing at the counter at Roscioli for the best Carbonara in
+            <p>Beat the heat at the <strong><a href="https://ticketing.colosseo.it/en/" target="_blank">Colosseum</a></strong> at
+                8:30 AM. Grab lunch
+                standing at the counter at <strong><a
+                        href="https://www.google.com/maps/search/?api=1&query=Roscioli+Salumeria+Via+dei+Giubbonari+21+Rome"
+                        target="_blank">Roscioli</a></strong> for the best Carbonara in
                 the game, then hike the Janiculum Hill at sunset for the ultimate skyline view.</p>
         </div>
 
@@ -282,16 +433,143 @@
                     Illuminati</strong> for the modern Roman pie (book 3 weeks out).</p>
         </div>
 
-        <div class="tip" style="margin-top: 80px; padding: 30px; border: 1px solid var(--accent-gold); border-radius: 15px;">
-            <div class="tip-h">The Deep Guide</div>
-            <p>For those who want to master the city, explore our exhaustive resources:</p>
-            <p>→ <strong><a href="itineraries.html">Detailed Itineraries</a></strong> (1, 2, 3, & 5-Day Plans)</p>
-            <p>→ <strong><a href="neighborhood.html">Neighborhood Practicalities Guide</a></strong> (Grocery, Laundry, Water)</p>
-            <p>→ <strong><a href="booking.html">Master Booking Checklist</a></strong> (Venues & Flights)</p>
+        <div class="tip" style="margin-top: 40px; padding: 25px; border: 1px solid var(--accent-gold); border-radius: 10px;">
+            <div class="tip-h">Special Occasions</div>
+            <p>Planning a final fling before the ring? Check out our curated itineraries:</p>
+            <p>→ <strong><a href="stag.html">The Stag Party Guide</a></strong></p>
+            <p>→ <strong><a href="bachelorette.html">La Bellissima Bachelorette</a></strong></p>
+        </div>
+        
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Historical Trivia</div>
+                    <p style="margin-bottom: 25px;">What does the name Italy mean?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">A) Land of the
+                            Latins</button>
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'italy-feedback')">B) Land of Veal</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">C) Land of
+                            Itys Alys</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'italy-feedback')">D) Land of
+                            Italo</button>
+                    </div>
+                </div>
+                <div class="trivia-image-side">
+                    <img src="italycutout.png" alt="Italy Trivia" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+            <div class="trivia-feedback" id="italy-feedback">
+                <span class="feedback-status"></span>
+                <p><strong>Answer: B - The Land of Veal</strong> ("víteliú", "vitulus" -> "vitella").</p>
+                <p>The name Italy originally applied only to the southern tip of the peninsula (modern-day Calabria). It was
+                    only during Roman expansion that the term grew to encompass the entire peninsula up to the Alps.</p>
+            </div>
+        </div>
+        
+        <div class="tip"
+            style="margin-top: 60px; padding: 30px; border: 2px solid var(--accent-gold); border-radius: 15px; text-align: center; background: rgba(197, 160, 89, 0.03);">
+            <div class="tip-h" style="font-size: 1.6rem;">The Deep Guide</div>
+            <p style="margin-bottom: 25px;">For those staying longer or wanting to dive deeper into our neighborhood:</p>
+            <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+                <p>→ <strong><a href="itineraries.html">Detailed Itineraries</a></strong></p>
+                <p>→ <strong><a href="neighborhood.html">Neighborhood Practicalities Guide</a></strong></p>
+            </div>
+        </div>
+        
+        <div class="checklist-section">
+            <h2 style="text-align: center;">Master Booking Checklist</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Rome rewards the prepared. Here is the temporal map for your
+                reservations.</p>
+        
+            <div class="timeline-item">
+                <div class="time">2 Months Out</div>
+                <div class="timeline-content">
+                    <strong><a href="https://www.tiqets.com/en/borghese-gallery-tickets-l144780/?partner=borghese.gallery"
+                            target="_blank">Galleria Borghese</a></strong>: Strictly
+                    mandatory. Tickets disappear instantly.
+                    <br><strong><a href="https://armandoalpantheon.it/prenota/" target="_blank">Armando al
+                            Pantheon</a></strong>: Tiny and
+                    historic. Book as soon as you have your dates.
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="time">3 Weeks Out</div>
+                <div class="timeline-content">
+                    <strong><a href="https://www.seupizza.com/" target="_blank">Seu Pizza Illuminati</a></strong>: The best
+                    modern dough in
+                    the city.
+                    <br><strong><a href="https://feliceatestaccio.com/en/" target="_blank">Felice a Testaccio</a></strong>: A
+                    Cacio e Pepe
+                    institution.
+                </div>
+            </div>
+        
+            <div class="timeline-item">
+                <div class="time">2 Weeks Out</div>
+                <div class="timeline-content">
+                    <strong><a href="https://www.museivaticani.va/content/museivaticani/en.html" target="_blank">Vatican
+                            Museums</a></strong>: Aim for the 8:00 AM slot.
+                    <br><strong><a href="https://ticketing.colosseo.it/en/" target="_blank">The Colosseum</a></strong>: Look for
+                    the "Full
+                    Experience" tickets.
+                </div>
+            </div>
+        </div>
+        
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Geographical Trivia</div>
+                    <p style="margin-bottom: 25px;">How many hills was Rome originally built on?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">A) 3</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">B) 5</button>
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'hills-feedback')">C) 7</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'hills-feedback')">D) 9</button>
+                    </div>
+                </div>
+            </div>
+            <div class="trivia-feedback" id="hills-feedback">
+                <span class="feedback-status"></span>
+                <p><strong>Answer: C - 7 Hills.</strong></p>
+                <p>The seven hills of Rome east of the Tiber form the geographical heart of Rome. They were the site of the
+                    first settlement of the ancient city.</p>
+            </div>
+        </div>
+        
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Architectural Trivia</div>
+                    <p style="margin-bottom: 25px;">Which Renaissance bridge connects Regola to Trastevere?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'bridge-feedback')">A) Ponte Sisto</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">B) Ponte
+                            Garibaldi</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">C) Ponte
+                            Mazzini</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">D) Ponte
+                            Cestio</button>
+                    </div>
+                </div>
+                <div class="trivia-image-side">
+                    <img src="farnesefleur.png" alt="Ponte Sisto" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+            <div class="trivia-feedback" id="bridge-feedback">
+                <span class="feedback-status"></span>
+                <p><strong>Answer: A - Ponte Sisto.</strong></p>
+                <p>Built by Pope Sixtus IV for the Jubilee of 1475, it is one of the most iconic and photographed bridges in
+                    Rome.</p>
+            </div>
         </div>
 
-        <div class="tip"
-            style="margin-top: 40px; padding: 30px; border: 1px solid rgba(197, 160, 89, 0.4); background: rgba(197, 160, 89, 0.05); text-align: center;">
+        <div class="practical-note">
             <div class="tip-h">Practical Information</div>
             <p>
                 Our building was constructed in 1800. Therefore there are no elevators to reach the Pad on the second piano (3rd
