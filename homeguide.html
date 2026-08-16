@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Booking Guide | Gigliopad Rome</title>
+    <title>Home Guide | Gigliopad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -108,37 +108,65 @@
         h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
             margin-bottom: 50px;
         }
 
-        .checklist-section {
-            margin-bottom: 60px;
+        .guide-section {
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
-        h2 {
+        .guide-h {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            margin-bottom: 25px;
             color: var(--accent-gold);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding-bottom: 10px;
         }
 
-        .timeline-item {
-            margin-bottom: 25px;
-            display: flex;
-            gap: 20px;
+        .warning-box {
+            background: rgba(220, 53, 69, 0.05);
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
         }
 
-        .time {
-            font-weight: bold;
-            min-width: 120px;
-            color: var(--accent-gold);
+        .warning-box strong {
+            color: #dc3545;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        .content-box {
-            background: rgba(0,0,0,0.03);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
+        p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 12px 0;
+        }
+
+        ul {
+            color: var(--text-muted);
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         .back-link {
@@ -158,8 +186,7 @@
             text-decoration: none;
             font-weight: bold;
         }
-    
-        
+
         
         
         
@@ -280,172 +307,52 @@
     <div id="google_translate_element" style="display:none"></div>
 
     <div class="container">
-        <h1>Master Booking Checklist</h1>
-        <p>Rome rewards the prepared. Here is the temporal map for your reservations.</p>
+        <div class="branding-header" style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html">
+                <img src="flower-logo.png" alt="Gigliopad Rome" class="branding-logo" style="width: 100px;">
+            </a>
+        </div>
+        <h1>Home Guide</h1>
+        <p class="subtitle">Operating instructions & house rules for your stay at Giglio Pad.</p>
 
-        <div class="checklist-section">
-            <h2>Advance Bookings</h2>
-            
-            <div class="timeline-item">
-                <div class="time">2 Months Out</div>
-                <div class="desc">
-                    <strong><a href="https://www.tiqets.com/en/borghese-gallery-tickets-l144780/?partner=borghese.gallery"
-                            target="_blank">Galleria Borghese</a></strong>: Strictly
-                    mandatory. Tickets disappear instantly.
-                    <br><strong><a href="https://armandoalpantheon.it/prenota/" target="_blank">Armando al Pantheon</a></strong>: Tiny and
-                    historic. Book as soon as you have your dates.
-                </div>
-            </div>
+        <div class="guide-section">
+            <h2 class="guide-h">Laundry</h2>
+            <p><strong>In-Unit Washing Machine:</strong> The washing machine in the bathroom works, but is small and takes a long time. You can hang items on the veranda or from the clotheslines extending from it.</p>
+            <p><strong>Laundromat Across the Alley:</strong> The laundromat across the alley says that they open at 7 a.m., but they will be open by 9 a.m. You can pay by cash or card.</p>
+            <ul>
+                <li>There is also a special card that you can buy to save 1 euro on each wash, but if the light on the card reader on the machine is red, then that special card won't work.</li>
+                <li>The washing machines do not require detergent.</li>
+                <li>The dryers can dry large loads in 30 minutes.</li>
+            </ul>
+        </div>
 
-            <div class="timeline-item">
-                <div class="time">3 Weeks Out</div>
-                <div class="desc">
-                    <strong><a href="https://www.seupizza.com/" target="_blank">Seu Pizza Illuminati</a></strong>: The best modern dough in
-                    the city.
-                    <br><strong><a href="https://feliceatestaccio.com/en/" target="_blank">Felice a Testaccio</a></strong>: A Cacio e Pepe
-                    institution.
-                </div>
-            </div>
+        <div class="guide-section">
+            <h2 class="guide-h">Air Conditioning</h2>
+            <p>Turn on the A/C in the living room and turn on the fan in the sleeping nook to cool the sleeping nook down.</p>
+            <p>There are A/C units in the living room, kitchen, and master bedroom. All use the same remotes.</p>
+            <p>There is also a ceiling fan in the kitchen with its own remote.</p>
+        </div>
 
-            <div class="timeline-item">
-                <div class="time">2 Weeks Out</div>
-                <div class="desc">
-                    <strong><a href="https://www.museivaticani.va/content/museivaticani/en.html" target="_blank">Vatican
-                            Museums</a></strong>: Aim for the 8:00 AM slot.
-                    <br><strong><a href="https://ticketing.colosseo.it/en/" target="_blank">The Colosseum</a></strong>: Look for the "Full
-                    Experience" tickets.
-                </div>
+        <div class="guide-section">
+            <h2 class="guide-h">Shower</h2>
+            <div class="warning-box">
+                <strong>Caution</strong>
+                <p style="margin: 0; color: #0a141d;">The knob that controls the overhead shower will come off if pulled on at the right angle.</p>
             </div>
         </div>
 
-        <div class="content-box">
-            <h2>Flight & Rail Mastery</h2>
-            <p><strong>Google Flights:</strong> Use the "Track Prices" feature for FCO. Tuesday and Wednesday flights are typically 20% cheaper than weekends.</p>
-            <p><strong>Eurail Pass:</strong> If you are planning 3+ train trips across Italy (e.g., Florence, Venice, Naples), a <strong><a href="https://www.eurail.com" target="_blank">Eurail</a></strong> pass is worth the flexibility. If just staying in Rome, skip it and use regional/Frecciarossa tickets.</p>
-        </div>
-
-        <div class="content-box">
-            <h2>The "Sold Out" Backdoor</h2>
-            <p>If the official museum sites are sold out, look for <strong>Guided Tours</strong>. Companies like <strong>Walks of Italy</strong> or <strong>The Roman Guy</strong> often have reserved blocks of tickets. Even a tour in a language you don't speak (like Spanish) is a valid way to get through the door.</p>
+        <div class="guide-section">
+            <h2 class="guide-h">Patio</h2>
+            <ul>
+                <li>Don't play music or make loud noise on the patio.</li>
+                <li>Maximum occupancy on the patio is four people.</li>
+                <li>Keep the awning extended to the point where its edge is roughly above the railing.</li>
+            </ul>
         </div>
 
         <a href="planning.html" class="back-link">Back to Planning</a>
     </div>
 
-    <style>
-        .footer-nav {
-            margin-top: 80px;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .footer-nav a:hover {
-            color: var(--accent-gold);
-        }
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /* Cookie Consent Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -150px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px);
-            max-width: 500px;
-            background: rgba(10, 20, 29, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 20px;
-            padding: 25px;
-            z-index: 3000;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-            text-transform: none;
-            letter-spacing: 0;
-        }
-        .cookie-banner.visible { bottom: 40px; }
-        .cookie-banner p {
-            margin: 0 0 20px 0;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            font-family: 'Outfit', sans-serif;
-        }
-        .cookie-actions { display: flex; justify-content: center; gap: 15px; }
-        .cookie-btn {
-            background: transparent;
-            border: 1px solid #c5a059;
-            color: #c5a059;
-            padding: 10px 30px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        .cookie-btn.accept { background: #c5a059; color: #0a141d; }
-        .cookie-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2); }
-
-        /* Info Panel Contrast & Watermark Fix */
-        .info-panel.visible {
-            background-color: #0a141d !important;
-            color: #ffffff !important;
-            padding: 60px 40px !important;
-            margin-left: -40px !important;
-            margin-right: -40px !important;
-            border-radius: 0 !important;
-            border-top: 1px solid rgba(197, 160, 89, 0.2) !important;
-            isolation: isolate !important;
-        }
-        .info-panel.visible::before {
-            opacity: 0.08 !important;
-            z-index: -1 !important;
-        }
-        .info-panel.visible h1, .info-panel.visible h2, .info-panel.visible h3, 
-        .info-panel.visible p, .info-panel.visible li, .info-panel.visible span,
-        .info-panel.visible .feature-card h3, .info-panel.visible .feature-card p,
-        .info-panel.visible .form-title {
-            color: #ffffff !important;
-        }
-        .info-panel.visible .feature-card {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border-color: rgba(197, 160, 89, 0.2) !important;
-        }
-        .info-panel.visible input[type="email"] {
-            border-bottom-color: #ffffff !important;
-            color: #ffffff !important;
-        }
-        .info-panel.visible .btn-submit {
-            background: #c5a059 !important;
-            color: #0a141d !important;
-        }
-
-    </style>
     <nav class="footer-nav">
         <a href="history.html">History</a>
         <a href="food.html">Food</a>
@@ -453,7 +360,7 @@
         <a href="transport.html">Getting Around</a>
         <a href="map.html">Map</a>
     </nav>
-    
+
     <script src="script.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {

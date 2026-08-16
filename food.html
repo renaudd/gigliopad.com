@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roman Eats | Gigliopad Rome</title>
+    <title>Roman Eats | Giglio Pad Rome</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="flower-logo.png">
     <style>
@@ -114,6 +114,7 @@
 
         .spot {
             margin-bottom: 50px;
+            transition: all 0.5s ease;
         }
 
         .spot-name {
@@ -137,17 +138,12 @@
             color: var(--text-muted);
         }
 
-        .spot {
-            margin-bottom: 50px;
-            transition: all 0.5s ease;
-        }
-
         /* Prevent text overlap with protruding images */
-        .spot:nth-child(-n+6) {
+        .spot.pad-left {
             padding-left: 10%;
         }
 
-        .spot:nth-last-child(-n+6) {
+        .spot.pad-right {
             padding-right: 10%;
         }
 
@@ -194,13 +190,13 @@
 
         .protrusion-item.left {
             left: 0;
-            top: 11%;
+            top: 6%;
             transform: translateX(-75%); /* 25% exposure */
         }
 
         .protrusion-item.right {
             right: 0;
-            top: 58%; /* Higher, closer to Armando */
+            top: 72%; /* Closer to Armando al Pantheon */
             transform: translateX(85%); /* 15% exposure */
         }
 
@@ -280,7 +276,14 @@
         .branding-logo:hover {
             opacity: 1;
         }
-    
+
+        
+        
+        
+        
+        
+        
+        
         
         /* Cookie Consent Banner */
         .cookie-banner {
@@ -403,7 +406,7 @@
             <h1>Insider Eats</h1>
         </div>
 
-        <div class="spot">
+        <div class="spot pad-left">
             <span class="spot-type">Contemporary Neapolitan Pizza</span>
             <div class="spot-name" style="font-size: 2.2rem; font-weight: 800;"><a
                     href="https://maps.google.com/?q=Piccolo+Buco+Rome"
@@ -411,69 +414,98 @@
             <p>
                 "Canotto" means inflatable raft, and is the term used to describe the particular crust found on contemporary Neapolitan pizza. If you already knew that, 
                 Piccolo Buco might be your favorite restaurant in Rome.</p>
-            <p> Try to show up before they open. Otherwise count yourself lucky if you only have to wait 50 minutes. 
+            <p> Even if you show up before they open, expect to wait in line. It is worth it. Order the yellow spice salami pie. 
                 In a group? Take turns holding the line so others can shop and throw a coin in the Trevi.</p>
-                <p> If you would rather plan ahead than stand in line, grab a reservation at
-                    <a href="https://www.google.com/maps/search/?api=1&query=Seu+Trastevere" target="_blank">Seu Pizza Illuminati</a>.
+            <p> If you would rather plan ahead than stand in line, grab a reservation at
+                <a href="https://www.google.com/maps/search/?api=1&query=Seu+Trastevere" target="_blank">Seu Pizza Illuminati</a>.
+            </p>
+        </div>
+
+        <div class="spot pad-left">
+            <span class="spot-type">Sandwich Shop & Lunch Plates · ★★★★ · $</span>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=Sto+Bene+Rome"
+                    target="_blank">Sto Bene</a></div>
+            <p>
+                Closest sandwich shop to the apartment — very cheap, very good, and no wait. The Norcino (€8) is spectacular, and the orange juice (€3.50) is the cheapest around. Also does lunch plates. Popular with locals.
+            </p>
+        </div>
+
+        <div class="spot pad-left">
+            <span class="spot-type">Neapolitan Snack Food Spot · ★★★★ · $$</span>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=Fiore+Rome"
+                    target="_blank">Fiore</a></div>
+            <p>
+                Neapolitan snack food spot — the montanare are awesome. Possibly the best supplì in town.
+            </p>
+        </div>
+
+        <div class="spot pad-left">
+            <span class="spot-type">Florentine Sandwiches · ★★★★ · $$</span>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=All+Antico+Vinaio+Rome"
+                    target="_blank">All’Antico Vinaio</a></div>
+            <p>
+                The one on Corso has the shortest line, but the quality control on Via delle Colonnelle is a little better. I recommend going at night right before they close to avoid the lines.
+            </p>
+        </div>
+
+        <div class="spot">
+            <span class="spot-type">Pizza Pocket Sandwiches · ★★★★ · $$</span>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=Trapizzino+Rome"
+                    target="_blank">Trapizzino</a></div>
+            <p>
+                Triangular pizza pocket sandwiches. The closest one is right across from ponte sisto, but the one near the Vatican is attached to a great artisanal beer bar.
             </p>
         </div>
         
         <div class="spot">
-            <span class="spot-type">Roman Pizza</span>
-            <div class="spot-name"><a href="https://maps.google.com/?q=Emma+Pizzeria+Via+del+Monte+della+Farina+28+Rome"
-                    target="_blank">Emma</a></div>
+            <span class="spot-type">Neighborhood Hidden Gems · ★★★★★ · $</span>
+            <div class="spot-name"><a href="https://www.google.com/maps/search/?api=1&query=Ruma+Bottega+Cucina+Agricola+Rome"
+                    target="_blank">Ruma</a></div>
             <p>
-                Thin-crust, traditional Roman pizza with high-end ingredients. It’s busy, it’s loud, and it’s one of the best spots in the
-                center for a late dinner with friends.
-                Just a 5-minute walk from the pad. For a more casual slice, try
-                <a href="https://www.google.com/maps/search/?api=1&query=Antico+Forno+Roscioli+Rome" target="_blank">Antico Forno
-                    Roscioli</a>.
+                Tell Gui I sent you. Possibly the best gelato, cheese, and wine you'll have in Europe. Reasonably priced. Good music. Great location. A modern masterclass in agricultural cuisine.
             </p>
         </div>
 
-        <div class="spot">
-            <span class="spot-type">The Caffeine Hub</span>
+        <div class="spot pad-right">
+            <span class="spot-type">Roman Osteria & Pasta · ★★★★ · $$</span>
             <div class="spot-name"><a
-                    href="https://www.google.com/maps/search/Barnum+Roma+Via+del+Pellegrino,+87,+00186+Rome,+Italy"
-                    target="_blank">Barnum Roma</a></div>
+                    href="https://www.google.com/maps/search/?api=1&query=Osteria+La+Quercia+Rome"
+                    target="_blank">La Quercia</a></div>
             <p>
-                Our go-to for morning coffee or a productive brunch. It’s got that creative shop energy and the best avocado toast
-                in Regola.
-                Perfect for meeting other travelers or getting some work done.
+                If not just as good as Armando’s their Amatriciana is easily number two, and their menu overall has a lot of great stuff on it. A block from the apartment and generally no wait. Attire recommended but not mandatory.
             </p>
-            </div>
-            
-            <div class="spot">
-                <span class="spot-type">Neighborhood Hidden Gems</span>
-                <div class="spot-name"><a href="https://www.google.com/maps/search/?api=1&query=Ruma+Bottega+Cucina+Agricola+Rome"
-                        target="_blank">Ruma Bottega</a></div>
-                <p>
-                    A modern masterclass in agricultural cuisine. Their cheese boards and focus on Maremma-sourced ingredients
-                    provide a
-                    fresh, contemporary contrast to the heavy Roman classics.
-                </p>
         </div>
 
-        <div class="spot" style="padding-left: 10%;">
-            <span class="spot-type">Cocktail Culture</span>
+        <div class="spot pad-right">
+            <span class="spot-type">Historic Local Café · ★★★ · $$</span>
             <div class="spot-name"><a
-                    href="https://www.google.com/maps/search/?api=1&query=The+Jerry+Thomas+Project+Rome,+Vicolo+Cellini+30,+00186+Rome"
-                    target="_blank">The Jerry Thomas Project</a></div>
+                    href="https://www.google.com/maps/search/?api=1&query=Caffe+Peru+Rome"
+                    target="_blank">Caffè Perù</a></div>
             <p>
-                Rome’s most famous speakeasy. You’ll need a password (and a reservation), but the drinks are world-class. It’s dark,
-                moody, and exactly the kind of place we love.
+                A classic neighborhood bar on Via di Monserrato. Popular with locals.
             </p>
         </div>
-        <div class="spot" style="padding-right: 10%;">
-            <span class="spot-type">Classic Roman Institution</span>
+
+        <div class="spot pad-right">
+            <span class="spot-type">Crispy Roman Sandwiches · ★★★★ · $</span>
+            <div class="spot-name"><a
+                    href="https://www.google.com/maps/search/?api=1&query=Scrocchia+Rome"
+                    target="_blank">Scrocchia</a></div>
+            <p>
+                The Ambaradan tastes like a honey mustard snack wrap in the best way. The sandwiches are small but super cheap and top quality. Close, never a line.
+            </p>
+        </div>
+
+        <div class="spot pad-right">
+            <span class="spot-type">Classic Roman Institution · ★★★★ · $$</span>
             <div class="spot-name" style="font-size: 2.2rem; font-weight: 800;"><a
                     href="https://maps.google.com/?q=Armando+al+Pantheon+Rome" target="_blank">Armando al Pantheon</a></div>
             <p>
-                A stone's throw from the Pantheon, this is where you go for the most traditional, perfectly executed Roman
-                dishes.
-                The Rigatoni all'Amatriciana is a masterclass in balance and depth. Reservations are essential and often book
-                out
-                weeks in advance.
+                Be on their website at 11:59 pm Italy time exactly one month before the day you want to eat there or you will not get to eat there. Definitely order the Amatriciana, it’s the best in town. The other stuff is just good, and the menu is heavy on offal.
             </p>
         </div>
 
@@ -482,15 +514,14 @@
             <div class="spot-name" style="font-size: 1.2rem;">Experience Rome at Home</div>
             <p>Bring the flavors of our neighborhood to your own kitchen with our signature recipe:</p>
             <p>→ <strong><a href="recipe.html">Spaghetti alla Puttanesca del Giglio</a></strong></p>
-            </div>
-            
-            <div class="spot"
-                style="margin-top: 40px; padding: 30px; border: 1px solid var(--accent-gold); border-radius: 15px; margin-left: 10%; margin-right: 10%;">
+        </div>
+        
+        <div class="spot"
+            style="margin-top: 40px; padding: 30px; border: 1px solid var(--accent-gold); border-radius: 15px; margin-left: 10%; margin-right: 10%;">
             <div class="spot-name" style="font-size: 1.2rem;">The Deep Guide</div>
-            <p>Hungry for more? Explore our complete list of curated venues.</p>
+            <p>Hungry for more? Explore our complete list of curated venues, gelato rankings, Amatriciana showdown, and global eats.</p>
             <p>→ <strong><a href="favorites.html">Our Full Favorites List</a></strong></p>
         </div>
-
 
         <a href="index.html" class="back-link">Back to the Pad</a>
     </div>
@@ -537,6 +568,12 @@
             color: var(--accent-gold);
         }
     
+        
+        
+        
+        
+        
+        
         
         /* Cookie Consent Banner */
         .cookie-banner {
