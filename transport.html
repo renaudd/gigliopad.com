@@ -199,6 +199,95 @@
             color: #0a141d !important;
         }
 
+        .trivia-container {
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 600px;
+            color: var(--text-dark);
+        }
+
+        .trivia-layout-side {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .trivia-content { flex: 1; }
+
+        .trivia-image-side {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .trivia-layout-side {
+                flex-direction: column;
+                gap: 25px;
+            }
+            .trivia-image-side {
+                width: 100%;
+                max-width: 150px;
+            }
+        }
+
+        .trivia-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+        }
+
+        .trivia-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .trivia-option {
+            background: none;
+            border: none;
+            padding: 0;
+            color: rgba(10, 20, 29, 0.6);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .trivia-option:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .trivia-option.correct {
+            color: var(--text-dark) !important;
+            font-weight: bold;
+        }
+
+        .trivia-option.incorrect-reveal {
+            color: rgba(10, 20, 29, 0.2) !important;
+        }
+
+        .trivia-option.incorrect-choice {
+            text-decoration: line-through;
+            color: rgba(10, 20, 29, 0.2) !important;
+        }
+
+        .trivia-feedback {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -234,7 +323,7 @@
         <h1>Transportation</h1>
 
         <div class="item">
-            <div class="item-h">Arrivals (No Stress)</div>
+            <div class="item-h">🛬 Arrivals (No Stress)</div>
             <p>Only take official <strong><a href="https://www.adr.it/web/aeroporti-di-roma-en/pax-fco-taxi" target="_blank">White
                         Taxis</a></strong> from FCO. The fare is fixed at €55—confirm this with the driver by
                 asking "Tariffa fissa?" before you leave. Skip the Leonardo Express if you’re tired; instead, take the <strong><a
@@ -245,7 +334,7 @@
         </div>
 
         <div class="item">
-            <div class="item-h">The 40 Express</div>
+            <div class="item-h">🚉 The 40 Express</div>
             <p>Need to hit Termini? Take <strong><a
                         href="https://www.google.com/maps/search/?api=1&query=Bus+40+Express+Stop+Argentina+Rome"
                         target="_blank">Bus 40
@@ -254,35 +343,35 @@
         </div>
 
         <div class="item">
-            <div class="item-h">Taxis &amp; Uber</div>
+            <div class="item-h">🚕 Taxis &amp; Uber</div>
             <p>The closest taxi station is on the far side of Campo de' Fiori at <strong><a href="https://maps.app.goo.gl/dHZd5j3jtMT8Q8bg7" target="_blank">Piazza di San Pantaleo</a></strong>. The next closest taxi stand is at <strong><a href="https://maps.app.goo.gl/QyNK4C3b4u1auyNC7" target="_blank">Largo di Torre Argentina</a></strong>. Uber does exist in Rome but may take much longer than a cab; Uber may be cheaper than a cab, but that is not guaranteed.</p>
         </div>
 
         <div class="item">
-            <div class="item-h">Scooters &amp; Bikes</div>
+            <div class="item-h">🛴 Scooters &amp; Bikes</div>
             <p>Set up your account and install the app before riding, and start the ride directly through the app. If you start a Lime ride directly through the QR code on the bike without having an account set up, it will be impossible to end the ride when you’re done and you’ll pay for an extra 15 €0.39 minutes.</p>
         </div>
 
         <div class="item">
-            <div class="item-h">Bus Tickets &amp; Public Transit</div>
+            <div class="item-h">🚌 Bus Tickets &amp; Public Transit</div>
             <p>You can buy paper bus tickets (€1.50) at all <strong>tabacchi</strong> stores (tobacco shops, signaled by a white 'T' against a black background) and at the hexagonal green tourist shop / newspaper stands found in most piazzas. You have to validate your paper ticket in the machine on the bus or pay by card (note that not all cards work with tap to pay). They check for validated tickets on the bus and will fine you.</p>
         </div>
 
         <div class="item">
-            <div class="item-h">Trains</div>
+            <div class="item-h">🚄 Trains</div>
             <p>Standard train tickets need to be validated by using the validation machine at the station before boarding the train. If you purchase an e-ticket that has a barcode, you do not need to validate it. If you sit in the wrong seat/car on the train, you will be fined.</p>
             <p>Pay attention to your stop: trains coming from the north will stop at Tiburtina before Termini.</p>
         </div>
 
         <div class="item">
-            <div class="item-h">Rental Cars</div>
+            <div class="item-h">🚗 Rental Cars</div>
             <p>Take photos of the car from every angle (front, back, left, right, roof, and each of the four corners) before
                 leaving
                 the lot. Having timestamped close-up photos at pick-up is necessary to avoid return fines.</p>
         </div>
 
         <div class="item">
-            <div class="item-h">Flying Domestically in Italy</div>
+            <div class="item-h">🛫 Flying Domestically in Italy</div>
             <p>They do not appear to limit liquid container sizes in carry-on luggage and do not ask for identification on domestic flights within Italy.</p>
         </div>
 
@@ -290,6 +379,34 @@
             <div class="item-h">The Deep Guide</div>
             <p>For granular maps and every way to reach the pad (including the "Smart Commuter" route):</p>
             <p>→ <strong><a href="transport_details.html">Comprehensive Transport Guide</a></strong></p>
+        </div>
+
+        <div class="trivia-container">
+            <div class="trivia-layout-side">
+                <div class="trivia-content">
+                    <div class="trivia-question">Architectural Trivia</div>
+                    <p style="margin-bottom: 25px;">Which Renaissance bridge connects Regola to Trastevere?</p>
+                    <div class="trivia-options">
+                        <button class="trivia-option" data-correct="true"
+                            onclick="selectTriviaOption(this, true, 'bridge-feedback')">A) Ponte Sisto</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">B) Ponte
+                            Garibaldi</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">C) Ponte
+                            Mazzini</button>
+                        <button class="trivia-option" onclick="selectTriviaOption(this, false, 'bridge-feedback')">D) Ponte
+                            Cestio</button>
+                    </div>
+                </div>
+                <div class="trivia-image-side">
+                    <img src="farnesefleur.png" alt="Ponte Sisto" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+            <div class="trivia-feedback" id="bridge-feedback">
+                <span class="feedback-status"></span>
+                <p><strong>Answer: A - Ponte Sisto.</strong></p>
+                <p>Built by Pope Sixtus IV for the Jubilee of 1475, it is one of the most iconic and photographed bridges in
+                    Rome.</p>
+            </div>
         </div>
 
         <a href="index.html" class="back-link">Back to the Pad</a>
