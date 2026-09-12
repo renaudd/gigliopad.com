@@ -11,6 +11,14 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="flower-logo.png">
+    <script>
+        (function() {
+            const session = sessionStorage.getItem('roma_portal_session_v1') || localStorage.getItem('roma_portal_session_v1');
+            if (!session) {
+                window.location.replace('members.html?tab=guide');
+            }
+        })();
+    </script>
     <style>
         :root {
             --bg-color: #fcfbf7;
@@ -340,7 +348,8 @@
         <div class="guide-section">
             <h2 class="guide-h">Address</h2>
             <p><strong>Vicolo del Giglio, 2a<br>Roma, RM 00186</strong></p>
-            <p>The closest major landmark is <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Farnese+Rome" target="_blank">Piazza Farnese</a>, which is the closest most cabs can reach.</p>
+            <p>The closest most cabs can reach is <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Farnese+Rome"
+                    target="_blank">Piazza Farnese</a>.</p>
             <img src="assets/photos/Front_Door_Zoom.jpg" alt="Building front door at Vicolo del Giglio, 2a"
                 style="width: 100%; max-height: 420px; object-fit: cover; border-radius: 10px; margin: 12px 0 18px 0; border: 1px solid rgba(197, 160, 89, 0.2);">
             <p>Street numbers count upward on each side of the street independently, and do not use odd and even addresses to distinguish opposite sides of the street. The 2A door is between the doors to Vicolo del Giglio 2 and 3 (Idraulico Valentini).</p>

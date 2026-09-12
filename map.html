@@ -509,7 +509,7 @@
     function initWineCrawlMap() {
       if (leafletMap) { leafletMap.invalidateSize(); return; }
       leafletMap = L.map('wine-crawl-map', { zoomControl: true, attributionControl: true });
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 20, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>' }).addTo(leafletMap);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors' }).addTo(leafletMap);
       const polyline = L.polyline(wineCrawlPath, { color: '#c5a059', weight: 4, opacity: 0.9, lineCap: 'round', lineJoin: 'round' }).addTo(leafletMap);
       wineCrawlPlaces.forEach((place) => {
         const icon = L.divIcon({ className: 'wine-marker', html: `<div class="wine-marker-badge">${place.num}</div>`, iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -14] });
