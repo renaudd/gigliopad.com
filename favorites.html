@@ -599,12 +599,14 @@
             padding: 20px;
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .res-modal-backdrop.active {
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
         }
 
         .res-modal-card {
@@ -1024,7 +1026,7 @@
             </div>
 
             <div class="guide-icons-row">
-                <div><span class="guide-key" style="min-width: auto;">📅</span> - make <a href="javascript:void(0)" onclick="openReservationModal('53-untitled')" style="color: var(--accent-gold); text-decoration: underline;">reservations</a> in advance.</div>
+                <div><span class="guide-key" style="min-width: auto;">📅</span> - make <a href="#reservationModal" onclick="event.preventDefault(); openReservationModal('53-untitled');" style="color: var(--accent-gold); text-decoration: underline;">reservations</a> in advance.</div>
                 <div><span class="guide-key" style="min-width: auto;">⏳</span> - prepare to wait in line.</div>
             </div>
 
@@ -1102,7 +1104,7 @@
                 <div class="venue-header">
                     <h3 class="venue-name"><a href="https://www.google.com/maps/search/?api=1&query=53+Untitled+Rome" target="_blank">53 Untitled</a></h3>
                     <div class="venue-badges">
-                        <a href="javascript:void(0)" onclick="openReservationModal('53-untitled')" class="badge-booking">7 days 📅</a>
+                        <a href="#reservationModal" onclick="event.preventDefault(); openReservationModal('53-untitled');" class="badge-booking">7 days 📅</a>
                         <span class="badge-rating">★★★★</span>
                         <span class="badge-price">$$$</span>
                     </div>
@@ -1551,7 +1553,7 @@
                     <div class="sub-header">
                         <h3 class="sub-title"><a href="https://www.google.com/maps/search/?api=1&query=53+Untitled+Rome" target="_blank">53 Untitled</a></h3>
                         <div class="venue-badges">
-                            <a href="javascript:void(0)" onclick="openReservationModal('53-untitled')" class="badge-booking">7 days 📅</a>
+                            <a href="#reservationModal" onclick="event.preventDefault(); openReservationModal('53-untitled');" class="badge-booking">7 days 📅</a>
                             <span class="badge-rating">★★★★★</span>
                             <span class="badge-price">$$$</span>
                         </div>
@@ -1580,7 +1582,7 @@
                     <div class="sub-header">
                         <h3 class="sub-title"><a href="https://www.google.com/maps/search/?api=1&query=Antica+Pesa+Rome" target="_blank">Antica Pesa</a></h3>
                         <div class="venue-badges">
-                            <a href="javascript:void(0)" onclick="openReservationModal('antica-pesa')" class="badge-booking">1 day 📅</a>
+                            <a href="#reservationModal" onclick="event.preventDefault(); openReservationModal('antica-pesa');" class="badge-booking">1 day 📅</a>
                             <span class="badge-rating">★★★★</span>
                             <span class="badge-price">$$$$</span>
                         </div>
@@ -2137,6 +2139,10 @@
                 document.body.style.overflow = '';
             }
         }
+
+        window.selectReservationVenue = selectReservationVenue;
+        window.openReservationModal = openReservationModal;
+        window.closeReservationModal = closeReservationModal;
 
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeReservationModal();
