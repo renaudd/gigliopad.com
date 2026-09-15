@@ -26,6 +26,7 @@
             font-family: 'Outfit', sans-serif;
             color: var(--text-dark);
             line-height: 1.7;
+            position: relative;
         }
 
         body::before {
@@ -190,13 +191,13 @@
 
         .protrusion-item.left {
             left: 0;
-            top: 6%;
+            top: 120px;
             transform: translateX(-75%); /* 25% exposure */
         }
 
         .protrusion-item.right {
             right: 0;
-            top: 72%; /* Closer to Armando al Pantheon */
+            top: 900px; /* Beside Armando al Pantheon */
             transform: translateX(85%); /* 15% exposure */
         }
 
@@ -421,7 +422,7 @@
             <h1>Insider Eats</h1>
         </div>
 
-        <div class="spot pad-left">
+        <div class="spot pad-left" id="venue-piccolo-buco">
             <span class="spot-type">Contemporary Neapolitan Pizza</span>
             <div class="spot-name" style="font-size: 2.2rem; font-weight: 800;"><a
                     href="https://maps.google.com/?q=Piccolo+Buco+Rome"
@@ -464,7 +465,7 @@
             </p>
         </div>
 
-        <div class="spot pad-right">
+        <div class="spot pad-right" id="venue-armando">
             <span class="spot-type">Classic Roman Institution · ★★★★ · $$</span>
             <div class="spot-name" style="font-size: 2.2rem; font-weight: 800;"><a
                     href="https://maps.google.com/?q=Armando+al+Pantheon+Rome" target="_blank">Armando al Pantheon</a></div>
@@ -506,6 +507,31 @@
             </div>
         </div>
     </div>
+    <script>
+        function alignProtrusions() {
+            const piccolo = document.getElementById('venue-piccolo-buco');
+            const armando = document.getElementById('venue-armando');
+            const leftItem = document.querySelector('.protrusion-item.left');
+            const rightItem = document.querySelector('.protrusion-item.right');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (piccolo && leftItem) {
+                const pRect = piccolo.getBoundingClientRect();
+                const lHeight = leftItem.offsetHeight || 500;
+                const targetTop = (pRect.top + scrollTop) + (pRect.height / 2) - (lHeight / 2);
+                leftItem.style.top = `${Math.max(20, targetTop)}px`;
+            }
+            if (armando && rightItem) {
+                const aRect = armando.getBoundingClientRect();
+                const rHeight = rightItem.offsetHeight || 650;
+                const targetTop = (aRect.top + scrollTop) + (aRect.height / 2) - (rHeight / 2);
+                rightItem.style.top = `${Math.max(20, targetTop)}px`;
+            }
+        }
+        window.addEventListener('DOMContentLoaded', alignProtrusions);
+        window.addEventListener('load', alignProtrusions);
+        window.addEventListener('resize', alignProtrusions);
+    </script>
 
     <style>
         .footer-nav {
